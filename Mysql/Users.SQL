@@ -86,3 +86,7 @@ Query OK, 0 rows affected (0.02 sec)
 
 /*Still cant give privileges */ 
 GRANT SELECT, INSERT, UPDATE ON faculty_of_technology.ATTENDANCE TO 'TECHNICAL_OFFICER'@'localhost';
+
+mysql> GRANT SELECT, INSERT, UPDATE ON faculty_of_technology.ATTENDANCE TO 'TECHNICAL_OFFICER'@'localhost';
+ERROR 1146 (42S02): Table 'faculty_of_technology.ATTENDANCE' doesn't exist
+mysql>
