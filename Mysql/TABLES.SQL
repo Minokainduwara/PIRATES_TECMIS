@@ -1,5 +1,5 @@
 CREATE DATABASE Faculty_of_Technology;
-USE Faculty_
+USE Faculty_of_Technology;
 
 /* USER table */
 
