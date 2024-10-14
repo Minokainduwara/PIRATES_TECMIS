@@ -26,8 +26,7 @@ CREATE USER 'ADMIN'@'localhost' IDENTIFIED BY 'password';
 
 mysql> CREATE USER 'ADMIN'@'localhost' IDENTIFIED BY 'password';
 Query OK, 0 rows affected (0.04 sec)
-
-GRANT ALL PRIVILEGES ON faculty_of_technology. * TO 'ADMIN'@'localhost' WITH GRANT OPTION;
+ 
 
 mysql> GRANT ALL PRIVILEGES ON faculty_of_technology. * TO 'ADMIN'@'localhost' WITH GRANT OPTION;
 Query OK, 0 rows affected (0.01 sec)
