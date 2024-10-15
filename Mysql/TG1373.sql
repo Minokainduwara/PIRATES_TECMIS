@@ -15,8 +15,10 @@ CREATE TABLE MEDICAL(
 );
 
 CREATE TABLE DEPARTMENT_ADMIN(	
-	admin_id CHAR(5),
-	department_id CHAR(5)
+	Admin_Id CHAR(3),
+	Department_Id CHAR(3),
+    FOREIGN KEY (Admin_Id) REFERENCES ADMIN(Admin_Id),
+    FOREIGN KEY (Department_Id) REFERENCES DEPARTMENT(Department_Id)
 );
 
 CREATE TABLE STUDENT_EXAM(
