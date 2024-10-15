@@ -1,0 +1,7 @@
+CREATE TABLE STUDENT(
+    Reg_No CHAR(6) NOT NULL,
+    State VARCHAR(20),
+    User_ID VARCHAR(6),
+    PRIMARY KEY(Reg_No),
+    FOREIGN KEY (User_ID) REFERENCES user(User_ID)
+);
