@@ -9,8 +9,7 @@ CREATE TABLE MARK(
     Mark_Id CHAR(3) PRIMARY KEY,
     Ca_Exam INT,
     Mid_Exam INT,
-    Exam_ID CHAR(3)
-    
+
 );
 
 CREATE TABLE SUBJECT(
