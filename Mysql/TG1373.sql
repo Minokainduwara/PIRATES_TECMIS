@@ -7,17 +7,23 @@ CREATE TABLE ATTENDANCE(
 );
 
 CREATE TABLE MEDICAL(
-	Medical_ID CHAR(5) PRIMARY KEY,
-	department_id CHAR(5),
-	reg_no CHAR(5)
+	Medical_Id CHAR(3) PRIMARY KEY,
+	Department_Id CHAR(3),
+	Reg_No CHAR(6),
+    FOREIGN KEY (Reg_No) REFERENCES STUDENT(Reg_No),
+    FOREIGN KEY (Department_Id) REFERENCES DEPARTMENT(Department_Id)
 );
 
 CREATE TABLE DEPARTMENT_ADMIN(	
-	admin_id CHAR(5),
-	department_id CHAR(5)
+	Admin_Id CHAR(3),
+	Department_Id CHAR(3),
+    FOREIGN KEY (Admin_Id) REFERENCES ADMIN(Admin_Id),
+    FOREIGN KEY (Department_Id) REFERENCES DEPARTMENT(Department_Id)
 );
 
 CREATE TABLE STUDENT_EXAM(
-	exam_id CHAR(5),
-	reg_no CHAR(5)
+	Exam_Id CHAR(3),
+	Reg_No CHAR(3),
+    FOREIGN KEY (Exam_Id) REFERENCES EXAM(Exam_Id),
+    FOREIGN KEY (Reg_No) REFERENCES STUDENT(Reg_No)
 );
