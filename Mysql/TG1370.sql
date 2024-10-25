@@ -12,5 +12,5 @@ CREATE TABLE Student_Exam(
     Reg_No char(6),
     FOREIGN KEY (Exam_ID) REFERENCES EXAM(Exam_Id),
     FOREIGN KEY (Reg_No) REFERENCES STUDENT(Reg_No)
-0
+
 );
