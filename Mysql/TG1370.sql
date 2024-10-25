@@ -4,3 +4,5 @@ CREATE TABLE DEPARTMENT{
     Dean_ID char(5)NOT NULL;
     FOREIGN KEY(Dean_ID) REFERENCES DEAN(Dean_ID);  
 }
+
+
