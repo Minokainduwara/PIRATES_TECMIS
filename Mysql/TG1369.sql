@@ -10,7 +10,7 @@ CREATE TABLE MARK(
     Ca_Exam INT,
     Mid_Exam INT,
     Exam_ID CHAR(3),
-    FOREIGN KEY(Exam_ID) REFERENCES STUDENT_EXAM(Exam_ID)
+    
 );
 
 CREATE TABLE SUBJECT(
