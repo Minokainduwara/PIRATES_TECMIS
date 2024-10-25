@@ -30,3 +30,10 @@ VALUES
 ('U025', 'password', 'Chandra', 'Perera', 'student', '2222 Moratuwa Rd, Moratuwa', 'chandra@fot.ruh.ac.lk', '2001-01-20'),
 ('U026', 'password', 'Nadisha', 'De Silva', 'student', '2323 Battaramulla Rd, Battaramulla', 'nadisha@fot.ruh.ac.lk', '2002-02-25'),
 ('U027', 'password', 'Suresh', 'Dharmadasa', 'student', '2424 Matara Rd, Matara', 'suresh@fot.ruh.ac.lk', '2003-03-30');
+
+
+
+*ADMIN
+
+INSERT INTO admin (Admin_ID, User_ID) VALUES
+('A01', 'U023');
