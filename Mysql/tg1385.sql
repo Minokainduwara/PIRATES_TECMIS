@@ -58,4 +58,8 @@ CREATE TABLE ADMIN_CONTACT(
     Admin_ID CHAR(3),
     Phone_No VARCHAR(11),
     FOREIGN KEY(Admin_ID) REFERENCES ADMIN(Admin_ID)
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> Version1
