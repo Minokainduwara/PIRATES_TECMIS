@@ -59,7 +59,11 @@ CREATE TABLE ADMIN_CONTACT(
     Phone_No VARCHAR(11),
     FOREIGN KEY(Admin_ID) REFERENCES ADMIN(Admin_ID)
 <<<<<<< HEAD
+<<<<<<< HEAD
 );
+=======
+);
+>>>>>>> Version1
 =======
 );
 >>>>>>> Version1
