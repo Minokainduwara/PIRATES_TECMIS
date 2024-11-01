@@ -31,4 +31,73 @@ mysql> INSERT INTO USER
 Query OK, 27 rows affected (0.04 sec)
 Records: 27  Duplicates: 0  Warnings: 0
 
+mysql> INSERT INTO admin_contact VALUES("A01","0760755332");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO admin_contact VALUES("A01","0715678932");
+Query OK, 1 row affected (0.01 sec)
+
+
+mysql> INSERT INTO dean VALUES("D01","U022");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO department VALUES("D001","ICT","D01");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO department VALUES("D002","ET","D01");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO department VALUES("D003","BST","D01");
+Query OK, 1 row affected (0.01 sec)
+
+
+
+INSERT INTO department_admin VALUES("A01","D001");
+INSERT INTO department_admin VALUES("A01","D002");
+INSERT INTO department_admin VALUES("A01","D003");
+
+CREATE TABLE DEPARTMENT_ADMIN(
+    Admin_Id CHAR(3),
+    Department_Id CHAR(5),
+    FOREIGN KEY (Admin_Id) REFERENCES ADMIN(Admin_Id),
+    FOREIGN KEY (Department_Id) REFERENCES DEPARTMENT(Department_Id)
+    );
+
+mysql> INSERT INTO lecturer VALUES("L01","U016");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO lecturer VALUES("L02","U017");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO lecturer VALUES("L03","U018");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO lecturer VALUES("L04","U024");
+Query OK, 1 row affected (0.01 sec)
+
+
+
+mysql> INSERT INTO lecturer_contact VALUES("L01","0711234245");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO lecturer_contact VALUES("L02","0717631692");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO lecturer_contact VALUES("L03","0714123567");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO lecturer_contact VALUES("L04","0767968432");
+Query OK, 1 row affected (0.01 sec)
+
+
+
+mysql> INSERT INTO technical_officer VALUES("T01","U019");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO technical_officer VALUES("T02","U020");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO technical_officer VALUES("T03","U021");
+Query OK, 1 row affected (0.01 sec)
+
 
