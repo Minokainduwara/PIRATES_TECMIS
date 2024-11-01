@@ -80,3 +80,16 @@ Query OK, 0 rows affected (0.04 sec)
 
 
 
+/*Updated Table */
+
+CREATE TABLE Attendance (
+    AttendanceID INT AUTO_INCREMENT PRIMARY KEY,
+    StudentID VARCHAR(10),
+    CourseCode VARCHAR(10),
+    SessionType ENUM('Theory', 'Practical'),
+    Week INT, 
+    Date DATE,
+    Status ENUM('Present', 'Absent', 'Medical'),  
+    TimeAllocation FLOAT  
+);
+
