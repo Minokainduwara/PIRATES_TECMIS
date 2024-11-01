@@ -93,3 +93,51 @@ CREATE TABLE Attendance (
     TimeAllocation FLOAT  
 );
 
+CREATE TABLE Marks (
+    MarkID INT AUTO_INCREMENT PRIMARY KEY,
+    StudentID VARCHAR(10),
+    CourseCode VARCHAR(10),
+    AssessmentType ENUM('Quiz', 'Assessment', 'Midterm_Practical', 'Midterm_Theory', 'Final_Practical', 'Final_Theory'),
+    MarksObtained DECIMAL(5, 2),
+    MaxMarks INT DEFAULT 100 
+);
+
+CREATE TABLE StudentStatus (
+    StudentID VARCHAR(10) PRIMARY KEY,
+    Status ENUM('Proper', 'Repeat', 'Suspended')
+);
+
+
+mysql> DROP TABLE ATTENDANCE;
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> CREATE TABLE Attendance (
+    ->     AttendanceID INT AUTO_INCREMENT PRIMARY KEY,
+    ->     StudentID VARCHAR(10),
+    ->     CourseCode VARCHAR(10),
+    ->     SessionType ENUM('Theory', 'Practical'),
+    ->     Week INT,
+    ->     Date DATE,
+    ->     Status ENUM('Present', 'Absent', 'Medical'),
+    ->     TimeAllocation FLOAT
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> DROP TABLE MARK;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE Marks (
+    ->     MarkID INT AUTO_INCREMENT PRIMARY KEY,
+    ->     StudentID VARCHAR(10),
+    ->     CourseCode VARCHAR(10),
+    ->     AssessmentType ENUM('Quiz', 'Assessment', 'Midterm_Practical', 'Midterm_Theory', 'Final_Practical', 'Final_Theory'),
+    ->     MarksObtained DECIMAL(5, 2),
+    ->     MaxMarks INT DEFAULT 100
+    -> );
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> CREATE TABLE StudentStatus (
+    ->     StudentID VARCHAR(10) PRIMARY KEY,
+    ->     Status ENUM('Proper', 'Repeat', 'Suspended')
+    -> );
+Query OK, 0 rows affected (0.03 sec)
