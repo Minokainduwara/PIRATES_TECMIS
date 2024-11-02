@@ -146,3 +146,10 @@ mysql> ALTER TABLE student
     -> DROP COLUMN state;
 Query OK, 0 rows affected (0.08 sec)
 Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE course
+    -> DROP COLUMN SGPA;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+

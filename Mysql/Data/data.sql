@@ -32,3 +32,79 @@ Query OK, 27 rows affected (0.04 sec)
 Records: 27  Duplicates: 0  Warnings: 0
 
 
+mysql> INSERT INTO student (Reg_No, User_ID)
+    -> VALUES
+    ->     ("TG1350", "U001"),
+    ->     ("TG1351", "U002"),
+    ->     ("TG1352", "U003"),
+    ->     ("TG1353", "U004"),
+    ->     ("TG1354", "U005"),
+    ->     ("TG1355", "U006"),
+    ->     ("TG1356", "U007"),
+    ->     ("TG1357", "U008"),
+    ->     ("TG1358", "U009"),
+    ->     ("TG1359", "U010"),
+    ->     ("TG1100", "U011"),
+    ->     ("TG1101", "U012"),
+    ->     ("TG1102", "U013"),
+    ->     ("TG1103", "U014"),
+    ->     ("TG1104", "U015"),
+    ->     ("TG1105", "U025"),
+    ->     ("TG1106", "U026"),
+    ->     ("TG1107", "U027");
+Query OK, 18 rows affected (0.03 sec)
+Records: 18  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO medical
+    -> VALUES
+    ->     ("m01", "D001", "TG1355"),
+    ->     ("m02", "D002", "TG1357"),
+    ->     ("m03", "D001", "TG1102"),
+    ->     ("m04", "D003", "TG1105"),
+    ->     ("m05", "D001", "TG1352");
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO course
+    -> VALUES
+    ->     ("C01", "ICT", "Undergraduate", "TG1350"),
+    ->     ("C02", "ET", "Undergraduate", "TG1351"),
+    ->     ("C03", "BST", "Undergraduate", "TG1352");
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO lecturer_course (LID, Course_Code, Lec_Hours, Lec_In_Charge)
+    -> VALUES
+    -> ('L01', 'C02', 30, 'Dr. Anjali Seneviratne'),
+    -> ('L02', 'C01', 20, 'Dr. Nuwan Laksiri'),
+    -> ('L03', 'C01', 25, 'Ms. Piyumi Wijesinghe'),
+    -> ('L04', 'C03', 20, 'Mr. Vishva Gunasena'),
+    -> ('L01', 'C02', 35, 'Dr. Anjali Seneviratne');
+Query OK, 5 rows affected (0.01 sec)
+Records: 5  Duplicates: 0  Warnings: 0
+
+
+/* Insert data to Attendance table using csv file */
+mysql> SHOW VARIABLES LIKE 'secure_file_priv';
++------------------+------------------------------------------------+
+| Variable_name    | Value                                          |
++------------------+------------------------------------------------+
+| secure_file_priv | C:\ProgramData\MySQL\MySQL Server 8.4\Uploads\ |
++------------------+------------------------------------------------+
+1 row in set (0.02 sec)
+
+mysql> SHOW VARIABLES LIKE 'local_infile';
++---------------+-------+
+| Variable_name | Value |
++---------------+-------+
+| local_infile  | OFF   |
++---------------+-------+
+1 row in set (0.02 sec)
+
+mysql> SET GLOBAL local_infile = 1;
+Query OK, 0 rows affected (0.00 sec)
+
+
+

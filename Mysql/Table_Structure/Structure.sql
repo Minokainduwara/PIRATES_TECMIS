@@ -239,3 +239,16 @@ mysql> desc studentstatus;
 | Status    | enum('Proper','Repeat','Suspended') | YES  |     | NULL    |       |
 +-----------+-------------------------------------+------+-----+---------+-------+
 2 rows in set (0.00 sec)
+
+
+mysql> desc course;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Course_Code | char(3)     | NO   | PRI | NULL    |       |
+| name        | varchar(30) | YES  |     | NULL    |       |
+| type        | varchar(20) | YES  |     | NULL    |       |
+| Reg_No      | char(6)     | YES  | MUL | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
