@@ -189,3 +189,53 @@ mysql> DESC technical_officer;
 +---------+------------+------+-----+---------+-------+
 2 rows in set (0.01 sec)
 
+
+
+
+/* Updated Table Structure */
+
+mysql> DESC student;
++---------+------------+------+-----+---------+-------+
+| Field   | Type       | Null | Key | Default | Extra |
++---------+------------+------+-----+---------+-------+
+| Reg_No  | char(6)    | NO   | PRI | NULL    |       |
+| User_ID | varchar(6) | YES  | MUL | NULL    |       |
++---------+------------+------+-----+---------+-------+
+
+
+mysql> DESC Attendance;
++----------------+------------------------------------+------+-----+---------+----------------+
+| Field          | Type                               | Null | Key | Default | Extra          |
++----------------+------------------------------------+------+-----+---------+----------------+
+| AttendanceID   | int                                | NO   | PRI | NULL    | auto_increment |
+| StudentID      | varchar(10)                        | YES  |     | NULL    |                |
+| CourseCode     | varchar(10)                        | YES  |     | NULL    |                |
+| SessionType    | enum('Theory','Practical')         | YES  |     | NULL    |                |
+| Week           | int                                | YES  |     | NULL    |                |
+| Date           | date                               | YES  |     | NULL    |                |
+| Status         | enum('Present','Absent','Medical') | YES  |     | NULL    |                |
+| TimeAllocation | float                              | YES  |     | NULL    |                |
++----------------+------------------------------------+------+-----+---------+----------------+
+8 rows in set (0.01 sec)
+
+mysql> DESC marks;
++----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| Field          | Type                                                                                            | Null | Key | Default | Extra          |
++----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| MarkID         | int                                                                                             | NO   | PRI | NULL    | auto_increment |
+| StudentID      | varchar(10)                                                                                     | YES  |     | NULL    |                |
+| CourseCode     | varchar(10)                                                                                     | YES  |     | NULL    |                |
+| AssessmentType | enum('Quiz','Assessment','Midterm_Practical','Midterm_Theory','Final_Practical','Final_Theory') | YES  |     | NULL    |                |
+| MarksObtained  | decimal(5,2)                                                                                    | YES  |     | NULL    |                |
+| MaxMarks       | int                                                                                             | YES  |     | 100     |                |
++----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+6 rows in set (0.01 sec)
+
+mysql> desc studentstatus;
++-----------+-------------------------------------+------+-----+---------+-------+
+| Field     | Type                                | Null | Key | Default | Extra |
++-----------+-------------------------------------+------+-----+---------+-------+
+| StudentID | varchar(10)                         | NO   | PRI | NULL    |       |
+| Status    | enum('Proper','Repeat','Suspended') | YES  |     | NULL    |       |
++-----------+-------------------------------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
