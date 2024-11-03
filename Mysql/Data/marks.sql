@@ -500,6 +500,10 @@ Records: 90  Duplicates: 0  Warnings: 0
 
 ------Malindu-------
 
+-----------------------
+SUB CODE : 'ICT1142'
+-----------------------
+
 INSERT INTO Marks (StudentID, AssessmentType, MarksObtained, MaxMarks, Sub_ID) VALUES
 
     ('TG1350', 'Quiz', 88.00, 100, 'ICT1142'), 
