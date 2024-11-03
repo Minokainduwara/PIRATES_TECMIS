@@ -31,7 +31,6 @@
 
 #### Entity-Relationship Diagram
 * The database design is based on a comprehensive ERD, mapping relationships between students, courses, attendance, and marks.
-![Logo](D:\level 1 sem 2\Database Managment System Practicum\mini project\ER.drawio.png)
 #### Table Schema
 * Detailed schema provided in the report, including attributes, constraints, and relationships.
 
