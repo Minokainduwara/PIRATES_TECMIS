@@ -836,77 +836,80 @@ INSERT INTO Marks (StudentID, AssessmentType, MarksObtained, MaxMarks, Sub_ID) V
 
     ('TG1350', 'Quiz', 82.00, 100, 'TMS1233'), 
     ('TG1350', 'Assessment', 90.00, 100, 'TMS1233'), 
-    ('TG1350', 'Midterm_Practical', 81.00, 100, 'TMS1233'),  
-    ('TG1350', 'Final_Practical', 85.00, 100, 'TMS1233'),
+    ('TG1350', 'Midterm_Theory', 81.00, 100, 'TMS1233'),  
+    ('TG1350', 'Final_Theory', 85.00, 100, 'TMS1233'),
 
     ('TG1351', 'Quiz', 84.00, 100, 'TMS1233'), 
     ('TG1351', 'Assessment', 88.00, 100, 'TMS1233'), 
-    ('TG1351', 'Midterm_Practical', 85.00, 100, 'TMS1233'),  
-    ('TG1351', 'Final_Practical', 87.00, 100, 'TMS1233'),
+    ('TG1351', 'Midterm_Theory', 85.00, 100, 'TMS1233'),  
+    ('TG1351', 'Final_Theory', 87.00, 100, 'TMS1233'),
 
     ('TG1352', 'Quiz', 86.00, 100, 'TMS1233'), 
     ('TG1352', 'Assessment', 85.00, 100, 'TMS1233'), 
-    ('TG1352', 'Midterm_Practical', 83.00, 100, 'TMS1233'),  
-    ('TG1352', 'Final_Practical', 89.00, 100, 'TMS1233'),
+    ('TG1352', 'Midterm_Theory', 83.00, 100, 'TMS1233'),  
+    ('TG1352', 'Final_Theory', 89.00, 100, 'TMS1233'),
 
     ('TG1353', 'Quiz', 80.00, 100, 'TMS1233'), 
     ('TG1353', 'Assessment', 87.00, 100, 'TMS1233'), 
-    ('TG1353', 'Midterm_Practical', 84.00, 100, 'TMS1233'),  
-    ('TG1353', 'Final_Practical', 86.00, 100, 'TMS1233'),
+    ('TG1353', 'Midterm_Theory', 84.00, 100, 'TMS1233'),  
+    ('TG1353', 'Final_Theory', 86.00, 100, 'TMS1233'),
 
     ('TG1354', 'Quiz', 85.00, 100, 'TMS1233'), 
     ('TG1354', 'Assessment', 90.00, 100, 'TMS1233'), 
-    ('TG1354', 'Midterm_Practical', 86.00, 100, 'TMS1233'),  
-    ('TG1354', 'Final_Practical', 88.00, 100, 'TMS1233'),
+    ('TG1354', 'Midterm_Theory', 86.00, 100, 'TMS1233'),  
+    ('TG1354', 'Final_Theory', 88.00, 100, 'TMS1233'),
 
     ('TG1355', 'Quiz', 78.00, 100, 'TMS1233'), 
     ('TG1355', 'Assessment', 82.00, 100, 'TMS1233'), 
-    ('TG1355', 'Midterm_Practical', 79.00, 100, 'TMS1233'),  
-    ('TG1355', 'Final_Practical', 83.00, 100, 'TMS1233'),
+    ('TG1355', 'Midterm_Theory', 79.00, 100, 'TMS1233'),  
+    ('TG1355', 'Final_Theory', 83.00, 100, 'TMS1233'),
 
     ('TG1356', 'Quiz', 88.00, 100, 'TMS1233'), 
     ('TG1356', 'Assessment', 84.00, 100, 'TMS1233'), 
-    ('TG1356', 'Midterm_Practical', 85.00, 100, 'TMS1233'),  
-    ('TG1356', 'Final_Practical', 87.00, 100, 'TMS1233'),
+    ('TG1356', 'Midterm_Theory', 85.00, 100, 'TMS1233'),  
+    ('TG1356', 'Final_Theory', 87.00, 100, 'TMS1233'),
 
     ('TG1357', 'Quiz', 81.00, 100, 'TMS1233'), 
     ('TG1357', 'Assessment', 83.00, 100, 'TMS1233'), 
-    ('TG1357', 'Midterm_Practical', 82.00, 100, 'TMS1233'),  
-    ('TG1357', 'Final_Practical', 85.00, 100, 'TMS1233'),
+    ('TG1357', 'Midterm_Theory', 82.00, 100, 'TMS1233'),  
+    ('TG1357', 'Final_Theory', 85.00, 100, 'TMS1233'),
 
     ('TG1358', 'Quiz', 89.00, 100, 'TMS1233'), 
     ('TG1358', 'Assessment', 87.00, 100, 'TMS1233'), 
-    ('TG1358', 'Midterm_Practical', 86.00, 100, 'TMS1233'),  
-    ('TG1358', 'Final_Practical', 88.00, 100, 'TMS1233'),
+    ('TG1358', 'Midterm_Theory', 86.00, 100, 'TMS1233'),  
+    ('TG1358', 'Final_Theory', 88.00, 100, 'TMS1233'),
 
     ('TG1359', 'Quiz', 84.00, 100, 'TMS1233'), 
     ('TG1359', 'Assessment', 85.00, 100, 'TMS1233'), 
-    ('TG1359', 'Midterm_Practical', 83.00, 100, 'TMS1233'),  
-    ('TG1359', 'Final_Practical', 85.00, 100, 'TMS1233'),
+    ('TG1359', 'Midterm_Theory', 83.00, 100, 'TMS1233'),  
+    ('TG1359', 'Final_Theory', 85.00, 100, 'TMS1233'),
 
     ('TG1100', 'Quiz', 30.00, 100, 'TMS1233'), 
     ('TG1100', 'Assessment', 35.00, 100, 'TMS1233'), 
-    ('TG1100', 'Midterm_Practical', 32.00, 100, 'TMS1233'),  
-    ('TG1100', 'Final_Practical', 34.00, 100, 'TMS1233'),
+    ('TG1100', 'Midterm_Theory', 32.00, 100, 'TMS1233'),  
+    ('TG1100', 'Final_Theory', 34.00, 100, 'TMS1233'),
 
     ('TG1101', 'Quiz', 28.00, 100, 'TMS1233'), 
     ('TG1101', 'Assessment', 30.00, 100, 'TMS1233'), 
-    ('TG1101', 'Midterm_Practical', 29.00, 100, 'TMS1233'),  
-    ('TG1101', 'Final_Practical', 31.00, 100, 'TMS1233'),
+    ('TG1101', 'Midterm_Theory', 29.00, 100, 'TMS1233'),  
+    ('TG1101', 'Final_Theory', 31.00, 100, 'TMS1233'),
 
     ('TG1102', 'Quiz', 25.00, 100, 'TMS1233'), 
     ('TG1102', 'Assessment', 27.00, 100, 'TMS1233'), 
-    ('TG1102', 'Midterm_Practical', 26.00, 100, 'TMS1233'),  
-    ('TG1102', 'Final_Practical', 29.00, 100, 'TMS1233'),
+    ('TG1102', 'Midterm_Theory', 26.00, 100, 'TMS1233'),  
+    ('TG1102', 'Final_Theory', 29.00, 100, 'TMS1233'),
 
     ('TG1103', 'Quiz', 20.00, 100, 'TMS1233'), 
     ('TG1103', 'Assessment', 22.00, 100, 'TMS1233'), 
-    ('TG1103', 'Midterm_Practical', 21.00, 100, 'TMS1233'),  
-    ('TG1103', 'Final_Practical', 23.00, 100, 'TMS1233'),
+    ('TG1103', 'Midterm_Theory', 21.00, 100, 'TMS1233'),  
+    ('TG1103', 'Final_Theory', 23.00, 100, 'TMS1233'),
 
     ('TG1104', 'Quiz', 18.00, 100, 'TMS1233'), 
     ('TG1104', 'Assessment', 19.00, 100, 'TMS1233'), 
-    ('TG1104', 'Midterm_Practical', 20.00, 100, 'TMS1233'),  
-    ('TG1104', 'Final_Practical', 22.00, 100, 'TMS1233');
+    ('TG1104', 'Midterm_Theory', 20.00, 100, 'TMS1233'),  
+    ('TG1104', 'Final_Theory', 22.00, 100, 'TMS1233');
 
-    
+
+-----------------------
+SUB CODE : 'ENG1222'
+-----------------------
