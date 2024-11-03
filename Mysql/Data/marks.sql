@@ -1156,3 +1156,100 @@ INSERT INTO Marks (StudentID, AssessmentType, MarksObtained, MaxMarks, Sub_ID) V
     ('TG1104', 'Final_Theory', 29.00, 100, 'TCS1212');
 
 
+-----------------------
+SUB CODE : 'ICT1233'
+-----------------------
+
+INSERT INTO Marks (StudentID, AssessmentType, MarksObtained, MaxMarks, Sub_ID) VALUES
+
+    ('TG1350', 'Quiz', 88.00, 100, 'ICT1233'), 
+    ('TG1350', 'Assessment', 91.00, 100, 'ICT1233'), 
+    ('TG1350', 'Midterm_Practical', 85.00, 100, 'ICT1233'),  
+    ('TG1350', 'Final_Practical', 89.00, 100, 'ICT1233'),
+    ('TG1350', 'Final_Theory', 92.00, 100, 'ICT1233'),
+
+    ('TG1351', 'Quiz', 87.00, 100, 'ICT1233'), 
+    ('TG1351', 'Assessment', 89.00, 100, 'ICT1233'), 
+    ('TG1351', 'Midterm_Practical', 86.00, 100, 'ICT1233'),  
+    ('TG1351', 'Final_Practical', 88.00, 100, 'ICT1233'),
+    ('TG1351', 'Final_Theory', 90.00, 100, 'ICT1233'),
+
+    ('TG1352', 'Quiz', 85.00, 100, 'ICT1233'), 
+    ('TG1352', 'Assessment', 88.00, 100, 'ICT1233'), 
+    ('TG1352', 'Midterm_Practical', 84.00, 100, 'ICT1233'),  
+    ('TG1352', 'Final_Practical', 86.00, 100, 'ICT1233'),
+    ('TG1352', 'Final_Theory', 89.00, 100, 'ICT1233'),
+
+    ('TG1353', 'Quiz', 86.00, 100, 'ICT1233'), 
+    ('TG1353', 'Assessment', 87.00, 100, 'ICT1233'), 
+    ('TG1353', 'Midterm_Practical', 82.00, 100, 'ICT1233'),  
+    ('TG1353', 'Final_Practical', 84.00, 100, 'ICT1233'),
+    ('TG1353', 'Final_Theory', 87.00, 100, 'ICT1233'),
+
+    ('TG1354', 'Quiz', 89.00, 100, 'ICT1233'), 
+    ('TG1354', 'Assessment', 90.00, 100, 'ICT1233'), 
+    ('TG1354', 'Midterm_Practical', 85.00, 100, 'ICT1233'),  
+    ('TG1354', 'Final_Practical', 87.00, 100, 'ICT1233'),
+    ('TG1354', 'Final_Theory', 91.00, 100, 'ICT1233'),
+
+    ('TG1355', 'Quiz', 88.00, 100, 'ICT1233'), 
+    ('TG1355', 'Assessment', 85.00, 100, 'ICT1233'), 
+    ('TG1355', 'Midterm_Practical', 83.00, 100, 'ICT1233'),  
+    ('TG1355', 'Final_Practical', 86.00, 100, 'ICT1233'),
+    ('TG1355', 'Final_Theory', 89.00, 100, 'ICT1233'),
+
+    ('TG1356', 'Quiz', 87.00, 100, 'ICT1233'), 
+    ('TG1356', 'Assessment', 86.00, 100, 'ICT1233'), 
+    ('TG1356', 'Midterm_Practical', 84.00, 100, 'ICT1233'),  
+    ('TG1356', 'Final_Practical', 87.00, 100, 'ICT1233'),
+    ('TG1356', 'Final_Theory', 88.00, 100, 'ICT1233'),
+
+    ('TG1357', 'Quiz', 85.00, 100, 'ICT1233'), 
+    ('TG1357', 'Assessment', 88.00, 100, 'ICT1233'), 
+    ('TG1357', 'Midterm_Practical', 83.00, 100, 'ICT1233'),  
+    ('TG1357', 'Final_Practical', 85.00, 100, 'ICT1233'),
+    ('TG1357', 'Final_Theory', 86.00, 100, 'ICT1233'),
+
+    ('TG1358', 'Quiz', 89.00, 100, 'ICT1233'), 
+    ('TG1358', 'Assessment', 90.00, 100, 'ICT1233'), 
+    ('TG1358', 'Midterm_Practical', 86.00, 100, 'ICT1233'),  
+    ('TG1358', 'Final_Practical', 88.00, 100, 'ICT1233'),
+    ('TG1358', 'Final_Theory', 90.00, 100, 'ICT1233'),
+
+    ('TG1359', 'Quiz', 84.00, 100, 'ICT1233'), 
+    ('TG1359', 'Assessment', 87.00, 100, 'ICT1233'), 
+    ('TG1359', 'Midterm_Practical', 82.00, 100, 'ICT1233'),  
+    ('TG1359', 'Final_Practical', 85.00, 100, 'ICT1233'),
+    ('TG1359', 'Final_Theory', 88.00, 100, 'ICT1233'),
+
+    ('TG1100', 'Quiz', 30.00, 100, 'ICT1233'), 
+    ('TG1100', 'Assessment', 28.00, 100, 'ICT1233'), 
+    ('TG1100', 'Midterm_Practical', 27.00, 100, 'ICT1233'),  
+    ('TG1100', 'Final_Practical', 29.00, 100, 'ICT1233'),
+    ('TG1100', 'Final_Theory', 25.00, 100, 'ICT1233'),
+
+    ('TG1101', 'Quiz', 31.00, 100, 'ICT1233'), 
+    ('TG1101', 'Assessment', 30.00, 100, 'ICT1233'), 
+    ('TG1101', 'Midterm_Practical', 25.00, 100, 'ICT1233'),  
+    ('TG1101', 'Final_Practical', 28.00, 100, 'ICT1233'),
+    ('TG1101', 'Final_Theory', 29.00, 100, 'ICT1233'),
+
+    ('TG1102', 'Quiz', 29.00, 100, 'ICT1233'), 
+    ('TG1102', 'Assessment', 27.00, 100, 'ICT1233'), 
+    ('TG1102', 'Midterm_Practical', 26.00, 100, 'ICT1233'),  
+    ('TG1102', 'Final_Practical', 30.00, 100, 'ICT1233'),
+    ('TG1102', 'Final_Theory', 27.00, 100, 'ICT1233'),
+
+    ('TG1103', 'Quiz', 28.00, 100, 'ICT1233'), 
+    ('TG1103', 'Assessment', 26.00, 100, 'ICT1233'), 
+    ('TG1103', 'Midterm_Practical', 24.00, 100, 'ICT1233'),  
+    ('TG1103', 'Final_Practical', 27.00, 100, 'ICT1233'),
+    ('TG1103', 'Final_Theory', 26.00, 100, 'ICT1233'),
+
+    ('TG1104', 'Quiz', 26.00, 100, 'ICT1233'), 
+    ('TG1104', 'Assessment', 28.00, 100, 'ICT1233'), 
+    ('TG1104', 'Midterm_Practical', 25.00, 100, 'ICT1233'),  
+    ('TG1104', 'Final_Practical', 29.00, 100, 'ICT1233'),
+    ('TG1104', 'Final_Theory', 27.00, 100, 'ICT1233');
+
+
