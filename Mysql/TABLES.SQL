@@ -153,3 +153,92 @@ Query OK, 0 rows affected (0.04 sec)
 Records: 0  Duplicates: 0  Warnings: 0
 
 
+mysql> ALTER TABLE marks ADD FOREIGN KEY (StudentID) REFERENCES student(Reg_No);
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DROP TABLE student_exam;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> DROP TABLE exam;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> ALTER TABLE SUBJECT DROP COLUMN CGPA;
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC SUBJECT;
++---------+---------+------+-----+---------+-------+
+| Field   | Type    | Null | Key | Default | Extra |
++---------+---------+------+-----+---------+-------+
+| S_Id    | char(3) | NO   | PRI | NULL    |       |
+| Credits | int     | YES  |     | NULL    |       |
++---------+---------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> ALTER TABLE Subject ADD COLUMN S_Name VARCHAR(30);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Subject ADD Course_code S_Name VARCHAR(30);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'S_Name VARCHAR(30)' at line 1
+mysql> ALTER TABLE Subject ADD Course_code CHAR(3);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Subject ADD FOREIGN KEY (Course_code) REFERENCES Course(Course_code);
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC SUBJECT;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| S_Id        | char(3)     | NO   | PRI | NULL    |       |
+| Credits     | int         | YES  |     | NULL    |       |
+| S_Name      | varchar(30) | YES  |     | NULL    |       |
+| Course_code | char(3)     | YES  | MUL | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql>
+
+mysql> DESC marks;
++----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| Field          | Type                                                                                            | Null | Key | Default | Extra          |
++----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| MarkID         | int                                                                                             | NO   | PRI | NULL    | auto_increment |
+| StudentID      | varchar(10)                                                                                     | YES  | MUL | NULL    |                |
+| CourseCode     | varchar(10)                                                                                     | YES  |     | NULL    |                |
+| AssessmentType | enum('Quiz','Assessment','Midterm_Practical','Midterm_Theory','Final_Practical','Final_Theory') | YES  |     | NULL    |                |
+| MarksObtained  | decimal(5,2)                                                                                    | YES  |     | NULL    |                |
+| MaxMarks       | int                                                                                             | YES  |     | 100     |                |
++----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql> ALTER TABLE marks DROP COLUMN CourseCode;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE marks ADD COLUMN Sub_ID char(3);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE marks ADD FOREIGN KEY (Sub_ID) REFERENCES Subject(S_ID);
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> DESC marks;
++----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| Field          | Type                                                                                            | Null | Key | Default | Extra          |
++----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+| MarkID         | int                                                                                             | NO   | PRI | NULL    | auto_increment |
+| StudentID      | varchar(10)                                                                                     | YES  | MUL | NULL    |                |
+| AssessmentType | enum('Quiz','Assessment','Midterm_Practical','Midterm_Theory','Final_Practical','Final_Theory') | YES  |     | NULL    |                |
+| MarksObtained  | decimal(5,2)                                                                                    | YES  |     | NULL    |                |
+| MaxMarks       | int                                                                                             | YES  |     | 100     |                |
+| Sub_ID         | char(3)                                                                                         | YES  | MUL | NULL    |                |
++----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
+6 rows in set (0.00 sec)
+
+mysql>
