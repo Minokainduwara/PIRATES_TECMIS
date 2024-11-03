@@ -242,3 +242,12 @@ mysql> DESC marks;
 6 rows in set (0.00 sec)
 
 mysql>
+
+
+mysql> ALTER TABLE Attendance DROP COLUMN CourseCode;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE Attendance ADD FOREIGN KEY (Sub_ID) REFERENCES Subject(S_ID);
+Query OK, 0 rows affected (0.09 sec)
+Records: 0  Duplicates: 0  Warnings: 0

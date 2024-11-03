@@ -1,239 +1,2086 @@
-mysql> INSERT INTO Attendance
-    -> VALUES
-    -> (1, 'TG1101', 'C01', 'Theory', 1, '2024-09-01', 'Present', 1.5);
-Query OK, 1 row affected (0.03 sec)
+------------------------------------------
+TG1350
+------------------------------------------
+
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1350', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1350', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1350', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1350', 'Practical', 1, '2024-09-04', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1350', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1350', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1350', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1350', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1350', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1350', 'Theory', 2, '2024-09-12', 'Absent', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1350', 'Theory', 3, '2024-09-15', 'Medical', 1.5, 'ICT1153'), -- Medical status
+    -> ('TG1350', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1350', 'Theory', 3, '2024-09-17', 'Medical', 1.5, 'ICT1161'), -- Medical status
+    -> ('TG1350', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1350', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1350', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1350', 'Practical', 4, '2024-09-23', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1350', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1350', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1350', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1350', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1350', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1350', 'Theory', 5, '2024-10-01', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1350', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1350', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1350', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1350', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1350', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1350', 'Practical', 6, '2024-10-09', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1350', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 7
+    -> ('TG1350', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1350', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1350', 'Theory', 7, '2024-10-15', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1350', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1350', 'Theory', 7, '2024-10-17', 'Absent', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 8
+    -> ('TG1350', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1350', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1350', 'Theory', 8, '2024-10-22', 'Medical', 1.5, 'ICT1112'), -- Medical status
+    -> ('TG1350', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1350', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 9
+    -> ('TG1350', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1350', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1350', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1350', 'Practical', 9, '2024-10-30', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1350', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 10
+    -> ('TG1350', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1350', 'Practical', 10, '2024-11-04', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1350', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1350', 'Practical', 10, '2024-11-06', 'Present', 1.5, 'ICT1161'),
+
+    -> ('TG1350', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 11
+    -> ('TG1350', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1350', 'Practical', 11, '2024-11-11', 'Medical', 1.5, 'ICT1132'), -- Medical status
+    -> ('TG1350', 'Theory', 11, '2024-11-12', 'Medical', 1.5, 'ICT1142'), -- Medical status
+    -> ('TG1350', 'Practical', 11, '2024-11-13', 'Present', 1.5, 'ICT1153'),
+
+    -> ('TG1350', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 12
+    -> ('TG1350', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1350', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1122'),
+
+    -> ('TG1350', 'Theory', 12, '2024-11-19', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1350', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1142'),
+
+    -> ('TG1350', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 13
+    -> ('TG1350', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1350', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1350', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1350', 'Practical', 13, '2024-11-27', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1350', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 14
+    -> ('TG1350', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1350', 'Practical', 14, '2024-12-02', 'Medical', 1.5, 'ICT1161'), -- Medical status
+    -> ('TG1350', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1350', 'Practical', 14, '2024-12-04', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1350', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 15
+    -> ('TG1350', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1350', 'Practical', 15, '2024-12-09', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1350', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1350', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1350', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1122');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
 
 
-mysql> INSERT INTO Attendance
-    -> VALUES
-    -> (2, 'TG1101', 'C01', 'Theory', 2, '2024-09-08', 'Absent', 1.6),
-    -> (3, 'TG1101', 'C01', 'Practical', 3, '2024-09-15', 'Present', 1.8),
-    -> (4, 'TG1101', 'C01', 'Theory', 4, '2024-09-22', 'Present', 1.5),
-    -> (5, 'TG1101', 'C01', 'Practical', 5, '2024-09-29', 'Medical', 2.0),
-    -> (6, 'TG1101', 'C01', 'Theory', 6, '2024-10-06', 'Present', 1.5),
-    -> (7, 'TG1101', 'C01', 'Practical', 7, '2024-10-13', 'Absent', 1.8),
-    -> (8, 'TG1101', 'C01', 'Theory', 8, '2024-10-20', 'Present', 1.5),
-    -> (9, 'TG1101', 'C01', 'Practical', 9, '2024-10-27', 'Present', 1.5),
-    -> (10, 'TG1101', 'C01', 'Theory', 10, '2024-11-03', 'Absent', 1.6),
-    -> (11, 'TG1101', 'C01', 'Practical', 11, '2024-11-10', 'Present', 1.9),
+----------------------------------
+TG1351
+----------------------------------
 
-    -> (12, 'TG1101', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (13, 'TG1101', 'C01', 'Practical', 13, '2024-11-24', 'Medical', 2.0),
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1351', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1351', 'Practical', 1, '2024-09-02', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1351', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1351', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1351', 'Theory', 1, '2024-09-05', 'Medical', 1.5, 'ENG1114'),  -- Medical status
+    ->
+    -> -- Week 2
+    -> ('TG1351', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1351', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1351', 'Theory', 2, '2024-09-10', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1351', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1351', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1351', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1351', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1351', 'Theory', 3, '2024-09-17', 'Medical', 1.5, 'ICT1161'), -- Medical status
+    -> ('TG1351', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1351', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1351', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1351', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1351', 'Theory', 4, '2024-09-24', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1351', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1351', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1351', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1351', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1351', 'Theory', 5, '2024-10-01', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1351', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1351', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1351', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1351', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1351', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1351', 'Practical', 6, '2024-10-09', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1351', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 7
+    -> ('TG1351', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1351', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1351', 'Theory', 7, '2024-10-15', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1351', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1351', 'Theory', 7, '2024-10-17', 'Absent', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 8
+    -> ('TG1351', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1351', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1351', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1351', 'Practical', 8, '2024-10-23', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1351', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 9
+    -> ('TG1351', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1351', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1351', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1351', 'Practical', 9, '2024-10-30', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1351', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 10
+    -> ('TG1351', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1351', 'Practical', 10, '2024-11-04', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1351', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1351', 'Practical', 10, '2024-11-06', 'Present', 1.5, 'ICT1161'),
 
-    -> (14, 'TG1101', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (15, 'TG1101', 'C01', 'Practical', 15, '2024-12-08', 'Present', 1.8),
+    -> ('TG1351', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 11
+    -> ('TG1351', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1351', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1132'),
 
-    -> (16, 'TG1102', 'C01', 'Theory', 1, '2024-09-01', 'Present', 1.5),
-    -> (17, 'TG1102', 'C01', 'Theory', 2, '2024-09-08', 'Present', 1.6),
-    -> (18, 'TG1102', 'C01', 'Practical', 3, '2024-09-15', 'Absent', 1.8),
-    -> (19, 'TG1102', 'C01', 'Theory', 4, '2024-09-22', 'Present', 1.5),
-    -> (20, 'TG1102', 'C01', 'Practical', 5, '2024-09-29', 'Present', 2.0),
-    -> (21, 'TG1102', 'C01', 'Theory', 6, '2024-10-06', 'Absent', 1.5),
-    -> (22, 'TG1102', 'C01', 'Practical', 7, '2024-10-13', 'Medical', 1.8),
-    -> (23, 'TG1102', 'C01', 'Theory', 8, '2024-10-20', 'Present', 1.5),
-    -> (24, 'TG1102', 'C01', 'Practical', 9, '2024-10-27', 'Present', 1.5),
-    -> (25, 'TG1102', 'C01', 'Theory', 10, '2024-11-03', 'Present', 1.6),
-    -> (26, 'TG1102', 'C01', 'Practical', 11, '2024-11-10', 'Absent', 1.9),
-    -> (27, 'TG1102', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (28, 'TG1102', 'C01', 'Practical', 13, '2024-11-24', 'Present', 2.0),
+    -> ('TG1351', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1351', 'Practical', 11, '2024-11-13', 'Medical', 1.5, 'ICT1153'), -- Medical status
+    -> ('TG1351', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 12
+    -> ('TG1351', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1351', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1122'),
 
-    -> (29, 'TG1102', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (30, 'TG1102', 'C01', 'Practical', 15, '2024-12-08', 'Present', 1.8);
+    -> ('TG1351', 'Theory', 12, '2024-11-19', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1351', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1142'),
 
-Query OK, 29 rows affected (0.01 sec)
-Records: 29  Duplicates: 0  Warnings: 0
+    -> ('TG1351', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 13
+    -> ('TG1351', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1351', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1112'),
 
-mysql> INSERT INTO Attendance
-    -> VALUES
-    -> (31, 'TG1103', 'C01', 'Theory', 1, '2024-09-01', 'Absent', 1.5),
-    -> (32, 'TG1103', 'C01', 'Theory', 2, '2024-09-08', 'Present', 1.6),
-    -> (33, 'TG1103', 'C01', 'Practical', 3, '2024-09-15', 'Present', 1.8),
-    -> (34, 'TG1103', 'C01', 'Theory', 4, '2024-09-22', 'Present', 1.5),
-    -> (35, 'TG1103', 'C01', 'Practical', 5, '2024-09-29', 'Medical', 2.0),
-    -> (36, 'TG1103', 'C01', 'Theory', 6, '2024-10-06', 'Present', 1.5),
-    -> (37, 'TG1103', 'C01', 'Practical', 7, '2024-10-13', 'Absent', 1.8),
-    -> (38, 'TG1103', 'C01', 'Theory', 8, '2024-10-20', 'Present', 1.5),
-    -> (39, 'TG1103', 'C01', 'Practical', 9, '2024-10-27', 'Present', 1.5),
-    -> (40, 'TG1103', 'C01', 'Theory', 10, '2024-11-03', 'Absent', 1.6),
-    -> (41, 'TG1103', 'C01', 'Practical', 11, '2024-11-10', 'Present', 1.9),
+    -> ('TG1351', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1351', 'Practical', 13, '2024-11-27', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1351', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 14
+    -> ('TG1351', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1351', 'Practical', 14, '2024-12-02', 'Medical', 1.5, 'ICT1161'), -- Medical status
+    -> ('TG1351', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1351', 'Practical', 14, '2024-12-04', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1351', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 15
+    -> ('TG1351', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1351', 'Practical', 15, '2024-12-09', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1351', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1351', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1112'),
 
-    -> (42, 'TG1103', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (43, 'TG1103', 'C01', 'Practical', 13, '2024-11-24', 'Medical', 2.0),
+    -> ('TG1351', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1122');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
 
-    -> (44, 'TG1103', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (45, 'TG1103', 'C01', 'Practical', 15, '2024-12-08', 'Present', 1.8),
 
-    -> (46, 'TG1104', 'C01', 'Theory', 1, '2024-09-01', 'Present', 1.5),
-    -> (47, 'TG1104', 'C01', 'Theory', 2, '2024-09-08', 'Present', 1.6),
-    -> (48, 'TG1104', 'C01', 'Practical', 3, '2024-09-15', 'Absent', 1.8),
-    -> (49, 'TG1104', 'C01', 'Theory', 4, '2024-09-22', 'Medical', 1.5),
-    -> (50, 'TG1104', 'C01', 'Practical', 5, '2024-09-29', 'Present', 2.0),
-    -> (51, 'TG1104', 'C01', 'Theory', 6, '2024-10-06', 'Absent', 1.5),
-    -> (52, 'TG1104', 'C01', 'Practical', 7, '2024-10-13', 'Present', 1.8),
-    -> (53, 'TG1104', 'C01', 'Theory', 8, '2024-10-20', 'Present', 1.5),
-    -> (54, 'TG1104', 'C01', 'Practical', 9, '2024-10-27', 'Present', 1.5),
-    -> (55, 'TG1104', 'C01', 'Theory', 10, '2024-11-03', 'Present', 1.6),
-    -> (56, 'TG1104', 'C01', 'Practical', 11, '2024-11-10', 'Absent', 1.9),
-    -> (57, 'TG1104', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (58, 'TG1104', 'C01', 'Practical', 13, '2024-11-24', 'Present', 2.0),
+-------------------------------------------
+TG1352
+-------------------------------------------
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1352', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1352', 'Practical', 1, '2024-09-02', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1352', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1352', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1352', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1352', 'Theory', 2, '2024-09-08', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1352', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1352', 'Theory', 2, '2024-09-10', 'Medical', 1.5, 'ICT1132'),  -- Medical status
+    -> ('TG1352', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1352', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1352', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1352', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1352', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1352', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1352', 'Theory', 3, '2024-09-19', 'Absent', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1352', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1352', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1352', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1352', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1352', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1352', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1352', 'Practical', 5, '2024-09-30', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1352', 'Theory', 5, '2024-10-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1352', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1352', 'Theory', 5, '2024-10-03', 'Medical', 1.5, 'ICT1153'), -- Medical status
+    ->
+    -> -- Week 6
+    -> ('TG1352', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1352', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1352', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1352', 'Practical', 6, '2024-10-09', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1352', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 7
+    -> ('TG1352', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1352', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1352', 'Theory', 7, '2024-10-15', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1352', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1352', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 8
+    -> ('TG1352', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1352', 'Practical', 8, '2024-10-21', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1352', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1352', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1352', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 9
+    -> ('TG1352', 'Theory', 9, '2024-10-27', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1352', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1352', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1352', 'Practical', 9, '2024-10-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1352', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 10
+    -> ('TG1352', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1352', 'Practical', 10, '2024-11-04', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1352', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1352', 'Practical', 10, '2024-11-06', 'Present', 1.5, 'ICT1122'),
 
-    -> (59, 'TG1104', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (60, 'TG1104', 'C01', 'Practical', 15, '2024-12-08', 'Medical', 1.8),
+    -> ('TG1352', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 11
+    -> ('TG1352', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1352', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1153'),
 
-    -> (61, 'TG1105', 'C01', 'Theory', 1, '2024-09-01', 'Present', 1.5),
-    -> (62, 'TG1105', 'C01', 'Theory', 2, '2024-09-08', 'Present', 1.6),
-    -> (63, 'TG1105', 'C01', 'Practical', 3, '2024-09-15', 'Absent', 1.8),
-    -> (64, 'TG1105', 'C01', 'Theory', 4, '2024-09-22', 'Present', 1.5),
-    -> (65, 'TG1105', 'C01', 'Practical', 5, '2024-09-29', 'Present', 2.0),
-    -> (66, 'TG1105', 'C01', 'Theory', 6, '2024-10-06', 'Present', 1.5),
-    -> (67, 'TG1105', 'C01', 'Practical', 7, '2024-10-13', 'Medical', 1.8),
-    -> (68, 'TG1105', 'C01', 'Theory', 8, '2024-10-20', 'Absent', 1.5),
-    -> (69, 'TG1105', 'C01', 'Practical', 9, '2024-10-27', 'Present', 1.5),
-    -> (70, 'TG1105', 'C01', 'Theory', 10, '2024-11-03', 'Present', 1.6),
-    -> (71, 'TG1105', 'C01', 'Practical', 11, '2024-11-10', 'Absent', 1.9),
-    -> (72, 'TG1105', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (73, 'TG1105', 'C01', 'Practical', 13, '2024-11-24', 'Present', 2.0),
+    -> ('TG1352', 'Theory', 11, '2024-11-12', 'Medical', 1.5, 'ICT1161'), -- Medical status
+    -> ('TG1352', 'Practical', 11, '2024-11-13', 'Present', 1.5, 'ICT1112'),
 
-    -> (74, 'TG1105', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (75, 'TG1105', 'C01', 'Practical', 15, '2024-12-08', 'Medical', 1.8),
+    -> ('TG1352', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 12
+    -> ('TG1352', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1352', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1142'),
 
-    -> (76, 'TG1106', 'C01', 'Theory', 1, '2024-09-01', 'Present', 1.5),
-    -> (77, 'TG1106', 'C01', 'Theory', 2, '2024-09-08', 'Present', 1.6),
-    -> (78, 'TG1106', 'C01', 'Practical', 3, '2024-09-15', 'Present', 1.8),
-    -> (79, 'TG1106', 'C01', 'Theory', 4, '2024-09-22', 'Absent', 1.5),
-    -> (80, 'TG1106', 'C01', 'Practical', 5, '2024-09-29', 'Present', 2.0),
-    -> (81, 'TG1106', 'C01', 'Theory', 6, '2024-10-06', 'Present', 1.5),
-    -> (82, 'TG1106', 'C01', 'Practical', 7, '2024-10-13', 'Medical', 1.8),
-    -> (83, 'TG1106', 'C01', 'Theory', 8, '2024-10-20', 'Present', 1.5),
-    -> (84, 'TG1106', 'C01', 'Practical', 9, '2024-10-27', 'Absent', 1.5),
-    -> (85, 'TG1106', 'C01', 'Theory', 10, '2024-11-03', 'Present', 1.6),
-    -> (86, 'TG1106', 'C01', 'Practical', 11, '2024-11-10', 'Present', 1.9),
+    -> ('TG1352', 'Theory', 12, '2024-11-19', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1352', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1161'),
 
-    -> (87, 'TG1106', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (88, 'TG1106', 'C01', 'Practical', 13, '2024-11-24', 'Medical', 2.0),
+    -> ('TG1352', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 13
+    -> ('TG1352', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1352', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1132'),
 
-    -> (89, 'TG1106', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (90, 'TG1106', 'C01', 'Practical', 15, '2024-12-08', 'Present', 1.8),
+    -> ('TG1352', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1352', 'Practical', 13, '2024-11-27', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1352', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 14
+    -> ('TG1352', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1352', 'Practical', 14, '2024-12-02', 'Medical', 1.5, 'ICT1122'), -- Medical status
+    -> ('TG1352', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1352', 'Practical', 14, '2024-12-04', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1352', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 15
+    -> ('TG1352', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1352', 'Practical', 15, '2024-12-09', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1352', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1352', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1132'),
 
-    -> (91, 'TG1107', 'C01', 'Theory', 1, '2024-09-01', 'Present', 1.5),
-    -> (92, 'TG1107', 'C01', 'Theory', 2, '2024-09-08', 'Present', 1.6),
-    -> (93, 'TG1107', 'C01', 'Practical', 3, '2024-09-15', 'Present', 1.8),
-    -> (94, 'TG1107', 'C01', 'Theory', 4, '2024-09-22', 'Absent', 1.5),
-    -> (95, 'TG1107', 'C01', 'Practical', 5, '2024-09-29', 'Present', 2.0),
-    -> (96, 'TG1107', 'C01', 'Theory', 6, '2024-10-06', 'Present', 1.5),
-    -> (97, 'TG1107', 'C01', 'Practical', 7, '2024-10-13', 'Medical', 1.8),
-    -> (98, 'TG1107', 'C01', 'Theory', 8, '2024-10-20', 'Absent', 1.5),
-    -> (99, 'TG1107', 'C01', 'Practical', 9, '2024-10-27', 'Present', 1.5),
-    -> (100, 'TG1107', 'C01', 'Theory', 10, '2024-11-03', 'Present', 1.6),
-    -> (101, 'TG1107', 'C01', 'Practical', 11, '2024-11-10', 'Absent', 1.9),
+    -> ('TG1352', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1142');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
 
-    -> (102, 'TG1107', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (103, 'TG1107', 'C01', 'Practical', 13, '2024-11-24', 'Present', 2.0),
-    -> (104, 'TG1107', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (105, 'TG1107', 'C01', 'Practical', 15, '2024-12-08', 'Medical', 1.8),
-    -> (106, 'TG1108', 'C01', 'Theory', 1, '2024-09-01', 'Present', 1.5),
-    -> (107, 'TG1108', 'C01', 'Theory', 2, '2024-09-08', 'Absent', 1.6),
-    -> (108, 'TG1108', 'C01', 'Practical', 3, '2024-09-15', 'Present', 1.8),
 
-    -> (109, 'TG1108', 'C01', 'Theory', 4, '2024-09-22', 'Present', 1.5),
-    -> (110, 'TG1108', 'C01', 'Practical', 5, '2024-09-29', 'Present', 2.0),
+---------------------------------------------
+TG1353
+---------------------------------------------
 
-    -> (111, 'TG1108', 'C01', 'Theory', 6, '2024-10-06', 'Absent', 1.5),
-    -> (112, 'TG1108', 'C01', 'Practical', 7, '2024-10-13', 'Medical', 1.8),
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1353', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1353', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1353', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1353', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1353', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1353', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1353', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1353', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1353', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1353', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1353', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1353', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1353', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1353', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1353', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1353', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1353', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1353', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1353', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1353', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1353', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1353', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1353', 'Theory', 5, '2024-10-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1353', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1353', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1353', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1353', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1353', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1353', 'Practical', 6, '2024-10-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1353', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 7
+    -> ('TG1353', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1353', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1353', 'Theory', 7, '2024-10-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1353', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1353', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 8
+    -> ('TG1353', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1353', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1353', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1353', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1353', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 9
+    -> ('TG1353', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1353', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1353', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1353', 'Practical', 9, '2024-10-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1353', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 10
+    -> ('TG1353', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1353', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1353', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1353', 'Practical', 10, '2024-11-06', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1353', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 11
+    -> ('TG1353', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1353', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1353', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1353', 'Practical', 11, '2024-11-13', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1353', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 12
+    -> ('TG1353', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1353', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1353', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1353', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1353', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 13
+    -> ('TG1353', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1353', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1353', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1353', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1353', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 14
+    -> ('TG1353', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1353', 'Practical', 14, '2024-12-02', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1353', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1353', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1353', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 15
+    -> ('TG1353', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1353', 'Practical', 15, '2024-12-09', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1353', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1353', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1353', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1142');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
 
-    -> (113, 'TG1108', 'C01', 'Theory', 8, '2024-10-20', 'Present', 1.5),
-    -> (114, 'TG1108', 'C01', 'Practical', 9, '2024-10-27', 'Present', 1.5),
 
-    -> (115, 'TG1108', 'C01', 'Theory', 10, '2024-11-03', 'Present', 1.6),
-    -> (116, 'TG1108', 'C01', 'Practical', 11, '2024-11-10', 'Absent', 1.9),
+-----------------------------------------------
+TG1354
+-----------------------------------------------
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1354', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1354', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1354', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1354', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1354', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1354', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1354', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1354', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1354', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1354', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1354', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1354', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1354', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1354', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1354', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1354', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1354', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1354', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1354', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1354', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1354', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1354', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1354', 'Theory', 5, '2024-10-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1354', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1354', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1354', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1354', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1354', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1354', 'Practical', 6, '2024-10-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1354', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 7
+    -> ('TG1354', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1354', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1354', 'Theory', 7, '2024-10-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1354', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1354', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 8
+    -> ('TG1354', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1354', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1354', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1354', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1354', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 9
+    -> ('TG1354', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1354', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1354', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1354', 'Practical', 9, '2024-10-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1354', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 10
+    -> ('TG1354', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1354', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1354', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1354', 'Practical', 10, '2024-11-06', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1354', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 11
+    -> ('TG1354', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1354', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1354', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1354', 'Practical', 11, '2024-11-13', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1354', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 12
+    -> ('TG1354', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1354', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1354', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1354', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1354', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 13
+    -> ('TG1354', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1354', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1354', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1354', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1354', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 14
+    -> ('TG1354', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1354', 'Practical', 14, '2024-12-02', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1354', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1354', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1354', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 15
+    -> ('TG1354', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1354', 'Practical', 15, '2024-12-09', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1354', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1354', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1354', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1142');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
 
-    -> (117, 'TG1108', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (118, 'TG1108', 'C01', 'Practical', 13, '2024-11-24', 'Present', 2.0),
-    -> (119, 'TG1108', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (120, 'TG1108', 'C01', 'Practical', 15, '2024-12-08', 'Medical', 1.8),
-    -> (121, 'TG1109', 'C01', 'Theory', 1, '2024-09-01', 'Present', 1.5),
-    -> (122, 'TG1109', 'C01', 'Theory', 2, '2024-09-08', 'Absent', 1.6),
-    -> (123, 'TG1109', 'C01', 'Practical', 3, '2024-09-15', 'Present', 1.8),
+------------------------------------------------
+TG1355
+------------------------------------------------
 
-    -> (124, 'TG1109', 'C01', 'Theory', 4, '2024-09-22', 'Present', 1.5),
-    -> (125, 'TG1109', 'C01', 'Practical', 5, '2024-09-29', 'Present', 2.0),
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1355', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1355', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1355', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1355', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1355', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1355', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1355', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1355', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1355', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1355', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1355', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1355', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1355', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1355', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1355', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1355', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1355', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1355', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1355', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1355', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1355', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1355', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1355', 'Theory', 5, '2024-10-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1355', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1355', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1355', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1355', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1355', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1355', 'Practical', 6, '2024-10-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1355', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 7
+    -> ('TG1355', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1355', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1355', 'Theory', 7, '2024-10-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1355', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1355', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 8
+    -> ('TG1355', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1355', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1355', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1355', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1355', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 9
+    -> ('TG1355', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1355', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1355', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1355', 'Practical', 9, '2024-10-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1355', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 10
+    -> ('TG1355', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1355', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1355', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1355', 'Practical', 10, '2024-11-06', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1355', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 11
+    -> ('TG1355', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1355', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1355', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1355', 'Practical', 11, '2024-11-13', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1355', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 12
+    -> ('TG1355', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1355', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1355', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1355', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1355', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 13
+    -> ('TG1355', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1355', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1355', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1355', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1355', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 14
+    -> ('TG1355', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1355', 'Practical', 14, '2024-12-02', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1355', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1355', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1355', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 15
+    -> ('TG1355', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1355', 'Practical', 15, '2024-12-09', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1355', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1355', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1355', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1142');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
 
-    -> (126, 'TG1109', 'C01', 'Theory', 6, '2024-10-06', 'Present', 1.5),
-    -> (127, 'TG1109', 'C01', 'Practical', 7, '2024-10-13', 'Medical', 1.8),
 
-    -> (128, 'TG1109', 'C01', 'Theory', 8, '2024-10-20', 'Present', 1.5),
-    -> (129, 'TG1109', 'C01', 'Practical', 9, '2024-10-27', 'Present', 1.5),
 
-    -> (130, 'TG1109', 'C01', 'Theory', 10, '2024-11-03', 'Present', 1.6);
-Query OK, 100 rows affected (0.01 sec)
-Records: 100  Duplicates: 0  Warnings: 0
- 
 
- mysql> INSERT INTO Attendance
-    -> VALUES
-    -> (131, 'TG1109', 'C01', 'Practical', 11, '2024-11-10', 'Absent', 1.9),
+-----------------------------------------
+TG1356
+-----------------------------------------
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1356', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1356', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1356', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1356', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1356', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1356', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1356', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1356', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1356', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1356', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1356', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1356', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1356', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1356', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1356', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1356', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1356', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1356', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1356', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1356', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1356', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1356', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1356', 'Theory', 5, '2024-10-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1356', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1356', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1356', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1356', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1356', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1356', 'Practical', 6, '2024-10-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1356', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 7
+    -> ('TG1356', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1356', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1356', 'Theory', 7, '2024-10-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1356', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1356', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 8
+    -> ('TG1356', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1356', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1356', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1356', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1356', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 9
+    -> ('TG1356', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1356', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1356', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1356', 'Practical', 9, '2024-10-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1356', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 10
+    -> ('TG1356', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1356', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1356', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1356', 'Practical', 10, '2024-11-06', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1356', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 11
+    -> ('TG1356', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1356', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1356', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1356', 'Practical', 11, '2024-11-13', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1356', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 12
+    -> ('TG1356', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1356', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1356', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1356', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1356', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 13
+    -> ('TG1356', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1356', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1356', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1356', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1356', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 14
+    -> ('TG1356', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1356', 'Practical', 14, '2024-12-02', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1356', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1356', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1356', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 15
+    -> ('TG1356', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1356', 'Practical', 15, '2024-12-09', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1356', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1356', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1356', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1142');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
 
-    -> (132, 'TG1109', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (133, 'TG1109', 'C01', 'Practical', 13, '2024-11-24', 'Present', 2.0),
-    -> (134, 'TG1109', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (135, 'TG1109', 'C01', 'Practical', 15, '2024-12-08', 'Medical', 1.8),
-    -> (136, 'TG1110', 'C01', 'Theory', 1, '2024-09-01', 'Present', 1.5),
-    -> (137, 'TG1110', 'C01', 'Theory', 2, '2024-09-08', 'Absent', 1.6),
-    -> (138, 'TG1110', 'C01', 'Practical', 3, '2024-09-15', 'Present', 1.8),
 
-    -> (139, 'TG1110', 'C01', 'Theory', 4, '2024-09-22', 'Present', 1.5),
-    -> (140, 'TG1110', 'C01', 'Practical', 5, '2024-09-29', 'Present', 2.0),
+---------------------------------
+TG1357
+---------------------------------
 
-    -> (141, 'TG1110', 'C01', 'Theory', 6, '2024-10-06', 'Present', 1.5),
-    -> (142, 'TG1110', 'C01', 'Practical', 7, '2024-10-13', 'Medical', 1.8),
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1357', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1357', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1357', 'Theory', 1, '2024-09-03', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1357', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1357', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1357', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1357', 'Practical', 2, '2024-09-09', 'Medical', 1.5, 'ICT1122'),
+    -> ('TG1357', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1357', 'Practical', 2, '2024-09-11', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1357', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1357', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1357', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1357', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1357', 'Practical', 3, '2024-09-18', 'Medical', 1.5, 'ICT1161'),
+    -> ('TG1357', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1357', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1357', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1357', 'Theory', 4, '2024-09-24', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1357', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1357', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1357', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1357', 'Practical', 5, '2024-09-30', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1357', 'Theory', 5, '2024-10-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1357', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1357', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1357', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1357', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1357', 'Theory', 6, '2024-10-08', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1357', 'Practical', 6, '2024-10-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1357', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 7
+    -> ('TG1357', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1357', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1357', 'Theory', 7, '2024-10-15', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1357', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1357', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 8
+    -> ('TG1357', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1357', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1357', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1357', 'Practical', 8, '2024-10-23', 'Medical', 1.5, 'ICT1142'),
+    -> ('TG1357', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 9
+    -> ('TG1357', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1357', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1357', 'Theory', 9, '2024-10-29', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1357', 'Practical', 9, '2024-10-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1357', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 10
+    -> ('TG1357', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1357', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1357', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1357', 'Practical', 10, '2024-11-06', 'Medical', 1.5, 'ICT1122'),
+    -> ('TG1357', 'Theory', 10, '2024-11-07', 'Absent', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 11
+    -> ('TG1357', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1357', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1357', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1357', 'Practical', 11, '2024-11-13', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1357', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 12
+    -> ('TG1357', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1357', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1357', 'Theory', 12, '2024-11-19', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1357', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1357', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 13
+    -> ('TG1357', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1357', 'Practical', 13, '2024-11-25', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1357', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1357', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1357', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 14
+    -> ('TG1357', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1357', 'Practical', 14, '2024-12-02', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1357', 'Theory', 14, '2024-12-03', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1357', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1357', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 15
+    -> ('TG1357', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1357', 'Practical', 15, '2024-12-09', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1357', 'Theory', 15, '2024-12-10', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1357', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1357', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1142');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
 
-    -> (143, 'TG1110', 'C01', 'Theory', 8, '2024-10-20', 'Present', 1.5),
-    -> (144, 'TG1110', 'C01', 'Practical', 9, '2024-10-27', 'Absent', 1.5),
-    -> (145, 'TG1110', 'C01', 'Theory', 10, '2024-11-03', 'Present', 1.6),
-    -> (146, 'TG1110', 'C01', 'Practical', 11, '2024-11-10', 'Present', 1.9),
-    -> (147, 'TG1110', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (148, 'TG1110', 'C01', 'Practical', 13, '2024-11-24', 'Medical', 2.0),
-    -> (149, 'TG1110', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (150, 'TG1110', 'C01', 'Practical', 15, '2024-12-08', 'Present', 1.8),
-    -> (151, 'TG1111', 'C01', 'Theory', 1, '2024-09-01', 'Present', 1.5),
-    -> (152, 'TG1111', 'C01', 'Theory', 2, '2024-09-08', 'Present', 1.6),
-    -> (153, 'TG1111', 'C01', 'Practical', 3, '2024-09-15', 'Present', 1.8),
+----------------------------------------------
+TG1358
+----------------------------------------------
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1358', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1358', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1358', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1358', 'Practical', 1, '2024-09-04', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1358', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1358', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1358', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1358', 'Theory', 2, '2024-09-10', 'Medical', 1.5, 'ICT1132'),
+    -> ('TG1358', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1358', 'Theory', 2, '2024-09-12', 'Absent', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1358', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1358', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1358', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1358', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1358', 'Theory', 3, '2024-09-19', 'Absent', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1358', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1358', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1358', 'Theory', 4, '2024-09-24', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1358', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1358', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1358', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1358', 'Practical', 5, '2024-09-30', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1358', 'Theory', 5, '2024-10-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1358', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1358', 'Theory', 5, '2024-10-03', 'Medical', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1358', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1358', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1358', 'Theory', 6, '2024-10-08', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1358', 'Practical', 6, '2024-10-09', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1358', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 7
+    -> ('TG1358', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1358', 'Practical', 7, '2024-10-14', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1358', 'Theory', 7, '2024-10-15', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1358', 'Practical', 7, '2024-10-16', 'Medical', 1.5, 'ICT1122'),
+    -> ('TG1358', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 8
+    -> ('TG1358', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1358', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1358', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1358', 'Practical', 8, '2024-10-23', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1358', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 9
+    -> ('TG1358', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1358', 'Practical', 9, '2024-10-28', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1358', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1358', 'Practical', 9, '2024-10-30', 'Medical', 1.5, 'ICT1161'),
+    -> ('TG1358', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 10
+    -> ('TG1358', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1358', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1358', 'Theory', 10, '2024-11-05', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1358', 'Practical', 10, '2024-11-06', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1358', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 11
+    -> ('TG1358', 'Theory', 11, '2024-11-10', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1358', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1358', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1358', 'Practical', 11, '2024-11-13', 'Medical', 1.5, 'ICT1142'),
+    -> ('TG1358', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 12
+    -> ('TG1358', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1358', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1358', 'Theory', 12, '2024-11-19', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1358', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1358', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 13
+    -> ('TG1358', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1358', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1358', 'Theory', 13, '2024-11-26', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1358', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1358', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 14
+    -> ('TG1358', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1358', 'Practical', 14, '2024-12-02', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1358', 'Theory', 14, '2024-12-03', 'Medical', 1.5, 'ICT1161'),
+    -> ('TG1358', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1358', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 15
+    -> ('TG1358', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1358', 'Practical', 15, '2024-12-09', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1358', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1358', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1358', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1112');
+Query OK, 75 rows affected (0.03 sec)
+Records: 75  Duplicates: 0  Warnings: 0
 
-    -> (154, 'TG1111', 'C01', 'Theory', 4, '2024-09-22', 'Present', 1.5),
-    -> (155, 'TG1111', 'C01', 'Practical', 5, '2024-09-29', 'Present', 2.0),
 
-    -> (156, 'TG1111', 'C01', 'Theory', 6, '2024-10-06', 'Present', 1.5),
-    -> (157, 'TG1111', 'C01', 'Practical', 7, '2024-10-13', 'Medical', 1.8),
+-------------------------------------------------
+TG1359
+------------------------------------------------
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1359', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1359', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1359', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1359', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1359', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1359', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1359', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1359', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1359', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1359', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1359', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1359', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1359', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1359', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1359', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1359', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1359', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1359', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1359', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1359', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1359', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1359', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1359', 'Theory', 5, '2024-10-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1359', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1359', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1359', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1359', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1359', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1359', 'Practical', 6, '2024-10-09', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1359', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 7
+    -> ('TG1359', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1359', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1359', 'Theory', 7, '2024-10-15', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1359', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1359', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 8
+    -> ('TG1359', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1359', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1359', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1359', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1359', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 9
+    -> ('TG1359', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1359', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1359', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1359', 'Practical', 9, '2024-10-30', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1359', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 10
+    -> ('TG1359', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1359', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1132'),
 
-    -> (158, 'TG1111', 'C01', 'Theory', 8, '2024-10-20', 'Absent', 1.5),
-    -> (159, 'TG1111', 'C01', 'Practical', 9, '2024-10-27', 'Present', 1.5),
+    -> ('TG1359', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1359', 'Practical', 10, '2024-11-06', 'Present', 1.5, 'ICT1153'),
 
-    -> (160, 'TG1111', 'C01', 'Theory', 10, '2024-11-03', 'Present', 1.6),
-    -> (161, 'TG1111', 'C01', 'Practical', 11, '2024-11-10', 'Absent', 1.9),
+    -> ('TG1359', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 11
+    -> ('TG1359', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1359', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1122'),
 
-    -> (162, 'TG1111', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (163, 'TG1111', 'C01', 'Practical', 13, '2024-11-24', 'Present', 2.0),
-    -> (164, 'TG1111', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (165, 'TG1111', 'C01', 'Practical', 15, '2024-12-08', 'Medical', 1.8),
-    -> (166, 'TG1112', 'C01', 'Theory', 1, '2024-09-01', 'Present', 1.5),
-    -> (167, 'TG1112', 'C01', 'Theory', 2, '2024-09-08', 'Present', 1.6),
-    -> (168, 'TG1112', 'C01', 'Practical', 3, '2024-09-15', 'Present', 1.8),
+    -> ('TG1359', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1359', 'Practical', 11, '2024-11-13', 'Present', 1.5, 'ICT1142'),
 
-    -> (169, 'TG1112', 'C01', 'Theory', 4, '2024-09-22', 'Present', 1.5),
-    -> (170, 'TG1112', 'C01', 'Practical', 5, '2024-09-29', 'Present', 2.0),
+    -> ('TG1359', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 12
+    -> ('TG1359', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1359', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1112'),
 
-    -> (171, 'TG1112', 'C01', 'Theory', 6, '2024-10-06', 'Present', 1.5),
-    -> (172, 'TG1112', 'C01', 'Practical', 7, '2024-10-13', 'Medical', 1.8),
+    -> ('TG1359', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1359', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1132'),
 
-    -> (173, 'TG1112', 'C01', 'Theory', 8, '2024-10-20', 'Present', 1.5),
-    -> (174, 'TG1112', 'C01', 'Practical', 9, '2024-10-27', 'Present', 1.5),
+    -> ('TG1359', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 13
+    -> ('TG1359', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1359', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1161'),
 
-    -> (175, 'TG1112', 'C01', 'Theory', 10, '2024-11-03', 'Present', 1.6),
-    -> (176, 'TG1112', 'C01', 'Practical', 11, '2024-11-10', 'Absent', 1.9),
+    -> ('TG1359', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1359', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1122'),
 
-    -> (177, 'TG1112', 'C01', 'Theory', 12, '2024-11-17', 'Present', 1.5),
-    -> (178, 'TG1112', 'C01', 'Practical', 13, '2024-11-24', 'Present', 2.0),
-    -> (179, 'TG1112', 'C01', 'Theory', 14, '2024-12-01', 'Present', 1.5),
-    -> (180, 'TG1112', 'C01', 'Practical', 15, '2024-12-08', 'Medical', 1.8);
-Query OK, 50 rows affected (0.01 sec)
-Records: 50  Duplicates: 0  Warnings: 0
+    -> ('TG1359', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 14
+    -> ('TG1359', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1359', 'Practical', 14, '2024-12-02', 'Present', 1.5, 'ICT1153'),
+
+    -> ('TG1359', 'Theory', 14, '2024-12-03', 'Medical', 1.5, 'ICT1161'),
+    -> ('TG1359', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1359', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 15
+    -> ('TG1359', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1359', 'Practical', 15, '2024-12-09', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1359', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1359', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1161'),
+
+    -> ('TG1359', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1112');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
+
+
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1100', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1100', 'Practical', 1, '2024-09-02', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1100', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1100', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1100', 'Theory', 1, '2024-09-05', 'Medical', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1100', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1100', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1100', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1100', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1100', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1100', 'Theory', 3, '2024-09-15', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1100', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1100', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1100', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1100', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1100', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1100', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1100', 'Theory', 4, '2024-09-24', 'Medical', 1.5, 'TMS1113'),
+    -> ('TG1100', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1100', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1100', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1100', 'Practical', 5, '2024-09-30', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1100', 'Theory', 5, '2024-10-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1100', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1100', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1100', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1100', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1100', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1100', 'Practical', 6, '2024-10-09', 'Medical', 1.5, 'ICT1132'),
+    -> ('TG1100', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 7
+    -> ('TG1100', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1100', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1100', 'Theory', 7, '2024-10-15', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1100', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1100', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 8
+    -> ('TG1100', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1100', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1100', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1100', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1100', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 9
+    -> ('TG1100', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1100', 'Practical', 9, '2024-10-28', 'Medical', 1.5, 'ICT1142'),
+    -> ('TG1100', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1100', 'Practical', 9, '2024-10-30', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1100', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 10
+    -> ('TG1100', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1100', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1132'),
+
+    -> ('TG1100', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1100', 'Practical', 10, '2024-11-06', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1100', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 11
+    -> ('TG1100', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1100', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1122'),
+
+    -> ('TG1100', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1100', 'Practical', 11, '2024-11-13', 'Present', 1.5, 'ICT1142'),
+
+    -> ('TG1100', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 12
+    -> ('TG1100', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1100', 'Practical', 12, '2024-11-18', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1100', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1100', 'Practical', 12, '2024-11-20', 'Medical', 1.5, 'ICT1132'),
+
+    -> ('TG1100', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 13
+    -> ('TG1100', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1100', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1161'),
+
+    -> ('TG1100', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1100', 'Practical', 13, '2024-11-27', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1100', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 14
+    -> ('TG1100', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1100', 'Practical', 14, '2024-12-02', 'Medical', 1.5, 'ICT1153'),
+
+    -> ('TG1100', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1100', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1100', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 15
+    -> ('TG1100', 'Theory', 15, '2024-12-08', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1100', 'Practical', 15, '2024-12-09', 'Present', 1.5, 'ICT1142'),
+
+    -> ('TG1100', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1100', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1161'),
+
+    -> ('TG1100', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1112');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
+
+---------------------------------------------
+TG1101
+------------------------------------
+
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1101', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1101', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1101', 'Theory', 1, '2024-09-03', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1101', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1101', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1101', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1101', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1101', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1101', 'Practical', 2, '2024-09-11', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1101', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1101', 'Theory', 3, '2024-09-15', 'Medical', 1.5, 'ICT1153'),
+    -> ('TG1101', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1101', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1101', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1101', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1101', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1101', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1101', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1101', 'Practical', 4, '2024-09-25', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1101', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1101', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1101', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1101', 'Theory', 5, '2024-10-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1101', 'Practical', 5, '2024-10-02', 'Medical', 1.5, 'ICT1142'),
+    -> ('TG1101', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1101', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1101', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1101', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1101', 'Practical', 6, '2024-10-09', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1101', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 7
+    -> ('TG1101', 'Theory', 7, '2024-10-13', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1101', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1101', 'Theory', 7, '2024-10-15', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1101', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1101', 'Theory', 7, '2024-10-17', 'Medical', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 8
+    -> ('TG1101', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1101', 'Practical', 8, '2024-10-21', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1101', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1101', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1101', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 9
+    -> ('TG1101', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1101', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1101', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1101', 'Practical', 9, '2024-10-30', 'Medical', 1.5, 'ICT1161'),
+    -> ('TG1101', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 10
+    -> ('TG1101', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1101', 'Practical', 10, '2024-11-04', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1101', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1101', 'Practical', 10, '2024-11-06', 'Present', 1.5, 'ICT1153'),
+
+    -> ('TG1101', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 11
+    -> ('TG1101', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1101', 'Practical', 11, '2024-11-11', 'Medical', 1.5, 'ICT1122'),
+
+    -> ('TG1101', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1101', 'Practical', 11, '2024-11-13', 'Present', 1.5, 'ICT1142'),
+
+    -> ('TG1101', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 12
+    -> ('TG1101', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1101', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1101', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1101', 'Practical', 12, '2024-11-20', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1101', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 13
+    -> ('TG1101', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1101', 'Practical', 13, '2024-11-25', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1101', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1101', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1122'),
+
+    -> ('TG1101', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 14
+    -> ('TG1101', 'Theory', 14, '2024-12-01', 'Medical', 1.5, 'ICT1142'),
+    -> ('TG1101', 'Practical', 14, '2024-12-02', 'Present', 1.5, 'ICT1153'),
+
+    -> ('TG1101', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1101', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1101', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 15
+    -> ('TG1101', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1101', 'Practical', 15, '2024-12-09', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1101', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1101', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1161'),
+
+    -> ('TG1101', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1112');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
+
+
+------------------------------------------
+TG1102
+----------------------------------------
+
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1102', 'Theory', 1, '2024-09-01', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1102', 'Practical', 1, '2024-09-02', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1102', 'Theory', 1, '2024-09-03', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1102', 'Practical', 1, '2024-09-04', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1102', 'Theory', 1, '2024-09-05', 'Absent', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1102', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1102', 'Practical', 2, '2024-09-09', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1102', 'Theory', 2, '2024-09-10', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1102', 'Practical', 2, '2024-09-11', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1102', 'Theory', 2, '2024-09-12', 'Absent', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1102', 'Theory', 3, '2024-09-15', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1102', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1102', 'Theory', 3, '2024-09-17', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1102', 'Practical', 3, '2024-09-18', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1102', 'Theory', 3, '2024-09-19', 'Absent', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1102', 'Theory', 4, '2024-09-22', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1102', 'Practical', 4, '2024-09-23', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1102', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1102', 'Practical', 4, '2024-09-25', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1102', 'Theory', 4, '2024-09-26', 'Absent', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1102', 'Theory', 5, '2024-09-29', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1102', 'Practical', 5, '2024-09-30', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1102', 'Theory', 5, '2024-10-01', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1102', 'Practical', 5, '2024-10-02', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1102', 'Theory', 5, '2024-10-03', 'Absent', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1102', 'Theory', 6, '2024-10-06', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1102', 'Practical', 6, '2024-10-07', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1102', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1102', 'Practical', 6, '2024-10-09', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1102', 'Theory', 6, '2024-10-10', 'Absent', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 7
+    -> ('TG1102', 'Theory', 7, '2024-10-13', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1102', 'Practical', 7, '2024-10-14', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1102', 'Theory', 7, '2024-10-15', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1102', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1102', 'Theory', 7, '2024-10-17', 'Absent', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 8
+    -> ('TG1102', 'Theory', 8, '2024-10-20', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1102', 'Practical', 8, '2024-10-21', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1102', 'Theory', 8, '2024-10-22', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1102', 'Practical', 8, '2024-10-23', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1102', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 9
+    -> ('TG1102', 'Theory', 9, '2024-10-27', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1102', 'Practical', 9, '2024-10-28', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1102', 'Theory', 9, '2024-10-29', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1102', 'Practical', 9, '2024-10-30', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1102', 'Theory', 9, '2024-10-31', 'Absent', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 10
+    -> ('TG1102', 'Theory', 10, '2024-11-03', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1102', 'Practical', 10, '2024-11-04', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1102', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1102', 'Practical', 10, '2024-11-06', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1102', 'Theory', 10, '2024-11-07', 'Absent', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 11
+    -> ('TG1102', 'Theory', 11, '2024-11-10', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1102', 'Practical', 11, '2024-11-11', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1102', 'Theory', 11, '2024-11-12', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1102', 'Practical', 11, '2024-11-13', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1102', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 12
+    -> ('TG1102', 'Theory', 12, '2024-11-17', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1102', 'Practical', 12, '2024-11-18', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1102', 'Theory', 12, '2024-11-19', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1102', 'Practical', 12, '2024-11-20', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1102', 'Theory', 12, '2024-11-21', 'Absent', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 13
+    -> ('TG1102', 'Theory', 13, '2024-11-24', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1102', 'Practical', 13, '2024-11-25', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1102', 'Theory', 13, '2024-11-26', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1102', 'Practical', 13, '2024-11-27', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1102', 'Theory', 13, '2024-11-28', 'Absent', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 14
+    -> ('TG1102', 'Theory', 14, '2024-12-01', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1102', 'Practical', 14, '2024-12-02', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1102', 'Theory', 14, '2024-12-03', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1102', 'Practical', 14, '2024-12-04', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1102', 'Theory', 14, '2024-12-05', 'Absent', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 15
+    -> ('TG1102', 'Theory', 15, '2024-12-08', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1102', 'Practical', 15, '2024-12-09', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1102', 'Theory', 15, '2024-12-10', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1102', 'Practical', 15, '2024-12-11', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1102', 'Theory', 15, '2024-12-12', 'Absent', 1.5, 'ICT1112');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
+
+
+----------------------------------------
+TG1103
+----------------------------------------
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1103', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1103', 'Practical', 1, '2024-09-02', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1103', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1103', 'Practical', 1, '2024-09-04', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1103', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1103', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1103', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1103', 'Theory', 2, '2024-09-10', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1103', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1103', 'Theory', 2, '2024-09-12', 'Absent', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1103', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1103', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1103', 'Theory', 3, '2024-09-17', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1103', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1103', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1103', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1103', 'Practical', 4, '2024-09-23', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1103', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1103', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1103', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1103', 'Theory', 5, '2024-09-29', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1103', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1103', 'Theory', 5, '2024-10-01', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1103', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1103', 'Theory', 5, '2024-10-03', 'Absent', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1103', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1103', 'Practical', 6, '2024-10-07', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1103', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1103', 'Practical', 6, '2024-10-09', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1103', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 7
+    -> ('TG1103', 'Theory', 7, '2024-10-13', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1103', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1103', 'Theory', 7, '2024-10-15', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1103', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1103', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 8
+    -> ('TG1103', 'Theory', 8, '2024-10-20', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1103', 'Practical', 8, '2024-10-21', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1103', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1103', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1103', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 9
+    -> ('TG1103', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1103', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1103', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1103', 'Practical', 9, '2024-10-30', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1103', 'Theory', 9, '2024-10-31', 'Absent', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 10
+    -> ('TG1103', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1103', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1132'),
+
+    -> ('TG1103', 'Theory', 10, '2024-11-05', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1103', 'Practical', 10, '2024-11-06', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1103', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 11
+    -> ('TG1103', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1103', 'Practical', 11, '2024-11-11', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1103', 'Theory', 11, '2024-11-12', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1103', 'Practical', 11, '2024-11-13', 'Present', 1.5, 'ICT1142'),
+
+    -> ('TG1103', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 12
+    -> ('TG1103', 'Theory', 12, '2024-11-17', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1103', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1103', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1103', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1132'),
+
+    -> ('TG1103', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 13
+    -> ('TG1103', 'Theory', 13, '2024-11-24', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1103', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1161'),
+
+    -> ('TG1103', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1103', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1122'),
+
+    -> ('TG1103', 'Theory', 13, '2024-11-28', 'Absent', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 14
+    -> ('TG1103', 'Theory', 14, '2024-12-01', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1103', 'Practical', 14, '2024-12-02', 'Present', 1.5, 'ICT1153'),
+
+    -> ('TG1103', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1103', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1103', 'Theory', 14, '2024-12-05', 'Absent', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 15
+    -> ('TG1103', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1103', 'Practical', 15, '2024-12-09', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1103', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1103', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1161'),
+
+    -> ('TG1103', 'Theory', 15, '2024-12-12', 'Absent', 1.5, 'ICT1112');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
+
+-----------------------------
+TG1104
+-----------------------------
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1104', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1104', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1104', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1104', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1104', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1104', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1104', 'Practical', 2, '2024-09-09', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1104', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1104', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1104', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1104', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1104', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1104', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1104', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1104', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1104', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1104', 'Practical', 4, '2024-09-23', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1104', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1104', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1104', 'Theory', 4, '2024-09-26', 'Absent', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1104', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1104', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1104', 'Theory', 5, '2024-10-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1104', 'Practical', 5, '2024-10-02', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1104', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1104', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1104', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1104', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1104', 'Practical', 6, '2024-10-09', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1104', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 7
+    -> ('TG1104', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1104', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1104', 'Theory', 7, '2024-10-15', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1104', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1104', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 8
+    -> ('TG1104', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1104', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1104', 'Theory', 8, '2024-10-22', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1104', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1104', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 9
+    -> ('TG1104', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1104', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1104', 'Theory', 9, '2024-10-29', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1104', 'Practical', 9, '2024-10-30', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1104', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 10
+    -> ('TG1104', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1104', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1132'),
+
+    -> ('TG1104', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1104', 'Practical', 10, '2024-11-06', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1104', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 11
+    -> ('TG1104', 'Theory', 11, '2024-11-10', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1104', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1122'),
+
+    -> ('TG1104', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1104', 'Practical', 11, '2024-11-13', 'Present', 1.5, 'ICT1142'),
+
+    -> ('TG1104', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 12
+    -> ('TG1104', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1104', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1104', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1104', 'Practical', 12, '2024-11-20', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1104', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 13
+    -> ('TG1104', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1104', 'Practical', 13, '2024-11-25', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1104', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1104', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1122'),
+
+    -> ('TG1104', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 14
+    -> ('TG1104', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1104', 'Practical', 14, '2024-12-02', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1104', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1104', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1104', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 15
+    -> ('TG1104', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1104', 'Practical', 15, '2024-12-09', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1104', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1104', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1161'),
+
+    -> ('TG1104', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1112');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
+
+
+-------------------------------
+TG1105
+-------------------------------
+
+
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1105', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1105', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1105', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1105', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1105', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1105', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1105', 'Practical', 2, '2024-09-09', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1105', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1105', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1105', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1105', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1105', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1105', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1105', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1105', 'Theory', 3, '2024-09-19', 'Absent', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1105', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1105', 'Practical', 4, '2024-09-23', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1105', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1105', 'Practical', 4, '2024-09-25', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1105', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1105', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1105', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1105', 'Theory', 5, '2024-10-01', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1105', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1105', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1105', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1105', 'Practical', 6, '2024-10-07', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1105', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1105', 'Practical', 6, '2024-10-09', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1105', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 7
+    -> ('TG1105', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1105', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1105', 'Theory', 7, '2024-10-15', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1105', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1105', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 8
+    -> ('TG1105', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1105', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1105', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1105', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1105', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 9
+    -> ('TG1105', 'Theory', 9, '2024-10-27', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1105', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1105', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1105', 'Practical', 9, '2024-10-30', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1105', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 10
+    -> ('TG1105', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1105', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1132'),
+
+    -> ('TG1105', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1105', 'Practical', 10, '2024-11-06', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1105', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 11
+    -> ('TG1105', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1105', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1122'),
+
+    -> ('TG1105', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1105', 'Practical', 11, '2024-11-13', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1105', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 12
+    -> ('TG1105', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1105', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1105', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1105', 'Practical', 12, '2024-11-20', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1105', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 13
+    -> ('TG1105', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1105', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1161'),
+
+    -> ('TG1105', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1105', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1122'),
+
+    -> ('TG1105', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 14
+    -> ('TG1105', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1105', 'Practical', 14, '2024-12-02', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1105', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1105', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1112'),
+
+    -> ('TG1105', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 15
+    -> ('TG1105', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1105', 'Practical', 15, '2024-12-09', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1105', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1105', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1161'),
+
+    -> ('TG1105', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1112');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
+
+----------------------------------------
+TG1106
+----------------------------------------
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1106', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1106', 'Practical', 1, '2024-09-02', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1106', 'Theory', 1, '2024-09-03', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1106', 'Practical', 1, '2024-09-04', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1106', 'Theory', 1, '2024-09-05', 'Absent', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1106', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1106', 'Practical', 2, '2024-09-09', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1106', 'Theory', 2, '2024-09-10', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1106', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1106', 'Theory', 2, '2024-09-12', 'Absent', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1106', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1106', 'Practical', 3, '2024-09-16', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1106', 'Theory', 3, '2024-09-17', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1106', 'Practical', 3, '2024-09-18', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1106', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1106', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1106', 'Practical', 4, '2024-09-23', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1106', 'Theory', 4, '2024-09-24', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1106', 'Practical', 4, '2024-09-25', 'Absent', 1.5, 'TMS1113'),
+    -> ('TG1106', 'Theory', 4, '2024-09-26', 'Absent', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1106', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1106', 'Practical', 5, '2024-09-30', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1106', 'Theory', 5, '2024-10-01', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1106', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1106', 'Theory', 5, '2024-10-03', 'Absent', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1106', 'Theory', 6, '2024-10-06', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1106', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1106', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1106', 'Practical', 6, '2024-10-09', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1106', 'Theory', 6, '2024-10-10', 'Absent', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 7
+    -> ('TG1106', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1106', 'Practical', 7, '2024-10-14', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1106', 'Theory', 7, '2024-10-15', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1106', 'Practical', 7, '2024-10-16', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1106', 'Theory', 7, '2024-10-17', 'Absent', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 8
+    -> ('TG1106', 'Theory', 8, '2024-10-20', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1106', 'Practical', 8, '2024-10-21', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1106', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1106', 'Practical', 8, '2024-10-23', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1106', 'Theory', 8, '2024-10-24', 'Absent', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 9
+    -> ('TG1106', 'Theory', 9, '2024-10-27', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1106', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1106', 'Theory', 9, '2024-10-29', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1106', 'Practical', 9, '2024-10-30', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1106', 'Theory', 9, '2024-10-31', 'Absent', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 10
+    -> ('TG1106', 'Theory', 10, '2024-11-03', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1106', 'Practical', 10, '2024-11-04', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1106', 'Theory', 10, '2024-11-05', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1106', 'Practical', 10, '2024-11-06', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1106', 'Theory', 10, '2024-11-07', 'Absent', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 11
+    -> ('TG1106', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1106', 'Practical', 11, '2024-11-11', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1106', 'Theory', 11, '2024-11-12', 'Absent', 1.5, 'ICT1132'),
+    -> ('TG1106', 'Practical', 11, '2024-11-13', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1106', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 12
+    -> ('TG1106', 'Theory', 12, '2024-11-17', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1106', 'Practical', 12, '2024-11-18', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1106', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1106', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1106', 'Theory', 12, '2024-11-21', 'Absent', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 13
+    -> ('TG1106', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1106', 'Practical', 13, '2024-11-25', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1106', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1106', 'Practical', 13, '2024-11-27', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1106', 'Theory', 13, '2024-11-28', 'Absent', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 14
+    -> ('TG1106', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1106', 'Practical', 14, '2024-12-02', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1106', 'Theory', 14, '2024-12-03', 'Absent', 1.5, 'ICT1161'),
+    -> ('TG1106', 'Practical', 14, '2024-12-04', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1106', 'Theory', 14, '2024-12-05', 'Absent', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 15
+    -> ('TG1106', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1106', 'Practical', 15, '2024-12-09', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1106', 'Theory', 15, '2024-12-10', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1106', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1106', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1112');
+Query OK, 75 rows affected (0.01 sec)
+Records: 75  Duplicates: 0  Warnings: 0
+
+------------------------------
+TG1107
+-----------------------------
+mysql> INSERT INTO ATTENDANCE (StudentID, SessionType, Week, Date, Status, TimeAllocation, Sub_ID) VALUES
+    -> -- Week 1
+    -> ('TG1107', 'Theory', 1, '2024-09-01', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1107', 'Practical', 1, '2024-09-02', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1107', 'Theory', 1, '2024-09-03', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1107', 'Practical', 1, '2024-09-04', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1107', 'Theory', 1, '2024-09-05', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 2
+    -> ('TG1107', 'Theory', 2, '2024-09-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1107', 'Practical', 2, '2024-09-09', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1107', 'Theory', 2, '2024-09-10', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1107', 'Practical', 2, '2024-09-11', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1107', 'Theory', 2, '2024-09-12', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 3
+    -> ('TG1107', 'Theory', 3, '2024-09-15', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1107', 'Practical', 3, '2024-09-16', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1107', 'Theory', 3, '2024-09-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1107', 'Practical', 3, '2024-09-18', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1107', 'Theory', 3, '2024-09-19', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 4
+    -> ('TG1107', 'Theory', 4, '2024-09-22', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1107', 'Practical', 4, '2024-09-23', 'Absent', 1.5, 'ICT1122'),
+    -> ('TG1107', 'Theory', 4, '2024-09-24', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1107', 'Practical', 4, '2024-09-25', 'Present', 1.5, 'TMS1113'),
+    -> ('TG1107', 'Theory', 4, '2024-09-26', 'Present', 1.5, 'ENG1114'),
+    ->
+    -> -- Week 5
+    -> ('TG1107', 'Theory', 5, '2024-09-29', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1107', 'Practical', 5, '2024-09-30', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1107', 'Theory', 5, '2024-10-01', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1107', 'Practical', 5, '2024-10-02', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1107', 'Theory', 5, '2024-10-03', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 6
+    -> ('TG1107', 'Theory', 6, '2024-10-06', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1107', 'Practical', 6, '2024-10-07', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1107', 'Theory', 6, '2024-10-08', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1107', 'Practical', 6, '2024-10-09', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1107', 'Theory', 6, '2024-10-10', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 7
+    -> ('TG1107', 'Theory', 7, '2024-10-13', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1107', 'Practical', 7, '2024-10-14', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1107', 'Theory', 7, '2024-10-15', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1107', 'Practical', 7, '2024-10-16', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1107', 'Theory', 7, '2024-10-17', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 8
+    -> ('TG1107', 'Theory', 8, '2024-10-20', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1107', 'Practical', 8, '2024-10-21', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1107', 'Theory', 8, '2024-10-22', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1107', 'Practical', 8, '2024-10-23', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1107', 'Theory', 8, '2024-10-24', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 9
+    -> ('TG1107', 'Theory', 9, '2024-10-27', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1107', 'Practical', 9, '2024-10-28', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1107', 'Theory', 9, '2024-10-29', 'Absent', 1.5, 'ICT1153'),
+    -> ('TG1107', 'Practical', 9, '2024-10-30', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1107', 'Theory', 9, '2024-10-31', 'Present', 1.5, 'ICT1112'),
+    ->
+    -> -- Week 10
+    -> ('TG1107', 'Theory', 10, '2024-11-03', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1107', 'Practical', 10, '2024-11-04', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1107', 'Theory', 10, '2024-11-05', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1107', 'Practical', 10, '2024-11-06', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1107', 'Theory', 10, '2024-11-07', 'Present', 1.5, 'ICT1161'),
+    ->
+    -> -- Week 11
+    -> ('TG1107', 'Theory', 11, '2024-11-10', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1107', 'Practical', 11, '2024-11-11', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1107', 'Theory', 11, '2024-11-12', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1107', 'Practical', 11, '2024-11-13', 'Absent', 1.5, 'ICT1142'),
+    -> ('TG1107', 'Theory', 11, '2024-11-14', 'Present', 1.5, 'ICT1153'),
+    ->
+    -> -- Week 12
+    -> ('TG1107', 'Theory', 12, '2024-11-17', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1107', 'Practical', 12, '2024-11-18', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1107', 'Theory', 12, '2024-11-19', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1107', 'Practical', 12, '2024-11-20', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1107', 'Theory', 12, '2024-11-21', 'Present', 1.5, 'ICT1142'),
+    ->
+    -> -- Week 13
+    -> ('TG1107', 'Theory', 13, '2024-11-24', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1107', 'Practical', 13, '2024-11-25', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1107', 'Theory', 13, '2024-11-26', 'Present', 1.5, 'ICT1112'),
+    -> ('TG1107', 'Practical', 13, '2024-11-27', 'Present', 1.5, 'ICT1122'),
+    -> ('TG1107', 'Theory', 13, '2024-11-28', 'Present', 1.5, 'ICT1132'),
+    ->
+    -> -- Week 14
+    -> ('TG1107', 'Theory', 14, '2024-12-01', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1107', 'Practical', 14, '2024-12-02', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1107', 'Theory', 14, '2024-12-03', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1107', 'Practical', 14, '2024-12-04', 'Absent', 1.5, 'ICT1112'),
+    -> ('TG1107', 'Theory', 14, '2024-12-05', 'Present', 1.5, 'ICT1122'),
+    ->
+    -> -- Week 15
+    -> ('TG1107', 'Theory', 15, '2024-12-08', 'Present', 1.5, 'ICT1132'),
+    -> ('TG1107', 'Practical', 15, '2024-12-09', 'Present', 1.5, 'ICT1142'),
+    -> ('TG1107', 'Theory', 15, '2024-12-10', 'Present', 1.5, 'ICT1153'),
+    -> ('TG1107', 'Practical', 15, '2024-12-11', 'Present', 1.5, 'ICT1161'),
+    -> ('TG1107', 'Theory', 15, '2024-12-12', 'Present', 1.5, 'ICT1112');
+Query OK, 75 rows affected (0.03 sec)
+Records: 75  Duplicates: 0  Warnings: 0
