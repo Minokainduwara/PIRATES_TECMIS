@@ -252,3 +252,11 @@ mysql> desc course;
 +-------------+-------------+------+-----+---------+-------+
 4 rows in set (0.00 sec)
 
+mysql> DROP TABLE COURSE_SUBJECT;
+Query OK, 0 rows affected (0.05 sec)
+
+
+mysql> ALTER TABLE marks
+    -> MODIFY COLUMN Sub_ID VARCHAR(10);
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
