@@ -69,6 +69,6 @@
 1. Open a pull request.
 
 ## Acknowledgments
-* University of Ruhuna - For providing the project outline and guidance.
 * MySQL Documentation - For references on database security and role management.
+* W3school
 
