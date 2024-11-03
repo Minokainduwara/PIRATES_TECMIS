@@ -83,14 +83,21 @@ CREATE USER 'TECHNICAL_OFFICER'@'localhost' IDENTIFIED BY 'password';
 mysql> CREATE USER 'TECHNICAL_OFFICER'@'localhost' IDENTIFIED BY 'password';
 Query OK, 0 rows affected (0.02 sec)
 
-/*Still cant give privileges */ 
 GRANT SELECT, INSERT, UPDATE ON faculty_of_technology.ATTENDANCE TO 'TECHNICAL_OFFICER'@'localhost';
 
 mysql> GRANT SELECT, INSERT, UPDATE ON faculty_of_technology.ATTENDANCE TO 'TECHNICAL_OFFICER'@'localhost';
-ERROR 1146 (42S02): Table 'faculty_of_technology.ATTENDANCE' doesn't exist
+Query OK, 0 rows affected (0.04 sec)
 mysql>
 
-/*-----------------------------------*/
+
+
+/*Create Student */
 CREATE USER 'STUDENT'@'localhost' IDENTIFIED BY 'password';
 
 GRANT SELECT ON faculty_of_technology.ATTENDANCE * TO 'STUDENT'@'localhost';
+
+mysql> CREATE USER 'STUDENT'@'localhost' IDENTIFIED BY 'password';
+Query OK, 0 rows affected (0.05 sec)
+
+mysql>
+mysql> GRANT SELECT ON faculty_of_technology.ATTENDANCE * TO 'STUDENT'@'localhost';

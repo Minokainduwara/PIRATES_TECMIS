@@ -1,3 +1,4 @@
+
 mysql> DESC user;
 +---------------+--------------+------+-----+---------+-------+
 | Field         | Type         | Null | Key | Default | Extra |
@@ -11,9 +12,7 @@ mysql> DESC user;
 | Email         | varchar(100) | YES  |     | NULL    |       |
 | Date_Of_Birth | date         | YES  |     | NULL    |       |
 +---------------+--------------+------+-----+---------+-------+
-8 rows in set (0.01 sec)
-
-
+8 rows in set (0.00 sec)
 mysql> DESC admin;
 +----------+------------+------+-----+---------+-------+
 | Field    | Type       | Null | Key | Default | Extra |
@@ -32,36 +31,74 @@ mysql> DESC admin_contact;
 +----------+-------------+------+-----+---------+-------+
 2 rows in set (0.01 sec)
 
+mysql> DESC allsubjectsattendancesummary;
++----------------------+---------------+------+-----+---------+-------+
+| Field                | Type          | Null | Key | Default | Extra |
++----------------------+---------------+------+-----+---------+-------+
+| RegistrationNo       | varchar(10)   | YES  |     | NULL    |       |
+| CourseCode           | varchar(10)   | YES  |     | NULL    |       |
+| AttendancePercentage | decimal(27,4) | YES  |     | NULL    |       |
+| Eligibility          | varchar(12)   | NO   |     |         |       |
++----------------------+---------------+------+-----+---------+-------+
+4 rows in set (0.01 sec)
+
 mysql> DESC attendance;
-+--------+---------+------+-----+---------+-------+
-| Field  | Type    | Null | Key | Default | Extra |
-+--------+---------+------+-----+---------+-------+
-| Reg_No | char(6) | YES  | MUL | NULL    |       |
-| TID    | char(3) | YES  | MUL | NULL    |       |
-| Count  | int     | YES  |     | NULL    |       |
-+--------+---------+------+-----+---------+-------+
++----------------+------------------------------------+------+-----+---------+----------------+
+| Field          | Type                               | Null | Key | Default | Extra          |
++----------------+------------------------------------+------+-----+---------+----------------+
+| AttendanceID   | int                                | NO   | PRI | NULL    | auto_increment |
+| StudentID      | varchar(10)                        | YES  |     | NULL    |                |
+| SessionType    | enum('Theory','Practical')         | YES  |     | NULL    |                |
+| Week           | int                                | YES  |     | NULL    |                |
+| Date           | date                               | YES  |     | NULL    |                |
+| Status         | enum('Present','Absent','Medical') | YES  |     | NULL    |                |
+| TimeAllocation | float                              | YES  |     | NULL    |                |
+| Sub_ID         | varchar(10)                        | YES  | MUL | NULL    |                |
++----------------+------------------------------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> DESC batch_ca_summary;
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| CourseCode  | varchar(10)   | YES  |     | NULL    |       |
+| StudentID   | varchar(10)   | YES  |     | NULL    |       |
+| CA_Marks    | decimal(34,6) | YES  |     | NULL    |       |
+| Eligibility | varchar(12)   | NO   |     |         |       |
++-------------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESC  batchattendancesummary;
++----------------------+---------------+------+-----+---------+-------+
+| Field                | Type          | Null | Key | Default | Extra |
++----------------------+---------------+------+-----+---------+-------+
+| CourseCode           | varchar(10)   | YES  |     | NULL    |       |
+| RegistrationNo       | varchar(10)   | YES  |     | NULL    |       |
+| AttendancePercentage | decimal(27,4) | YES  |     | NULL    |       |
+| Eligibility          | varchar(12)   | NO   |     |         |       |
++----------------------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESC  combinedattendance;
++------------------------------+---------------+------+-----+---------+-------+
+| Field                        | Type          | Null | Key | Default | Extra |
++------------------------------+---------------+------+-----+---------+-------+
+| RegistrationNo               | varchar(10)   | YES  |     | NULL    |       |
+| CourseCode                   | varchar(10)   | YES  |     | NULL    |       |
+| CombinedAttendancePercentage | decimal(27,4) | YES  |     | NULL    |       |
++------------------------------+---------------+------+-----+---------+-------+
 3 rows in set (0.00 sec)
 
 mysql> DESC course;
-+-------------+--------------+------+-----+---------+-------+
-| Field       | Type         | Null | Key | Default | Extra |
-+-------------+--------------+------+-----+---------+-------+
-| Course_Code | char(3)      | NO   | PRI | NULL    |       |
-| name        | varchar(30)  | YES  |     | NULL    |       |
-| type        | varchar(20)  | YES  |     | NULL    |       |
-| Reg_No      | char(6)      | YES  | MUL | NULL    |       |
-| SGPA        | decimal(4,2) | YES  |     | NULL    |       |
-+-------------+--------------+------+-----+---------+-------+
-5 rows in set (0.01 sec)
-
-mysql> DESC course_subject;
-+-------------+---------+------+-----+---------+-------+
-| Field       | Type    | Null | Key | Default | Extra |
-+-------------+---------+------+-----+---------+-------+
-| S_Id        | char(3) | YES  | MUL | NULL    |       |
-| Course_Code | char(7) | YES  | MUL | NULL    |       |
-+-------------+---------+------+-----+---------+-------+
-2 rows in set (0.00 sec)
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| Course_Code | char(3)     | NO   | PRI | NULL    |       |
+| name        | varchar(30) | YES  |     | NULL    |       |
+| type        | varchar(20) | YES  |     | NULL    |       |
+| Reg_No      | char(6)     | YES  | MUL | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
 
 mysql> DESC dean;
 +---------+------------+------+-----+---------+-------+
@@ -70,7 +107,7 @@ mysql> DESC dean;
 | Dean_ID | char(3)    | NO   | PRI | NULL    |       |
 | User_ID | varchar(6) | YES  | MUL | NULL    |       |
 +---------+------------+------+-----+---------+-------+
-2 rows in set (0.01 sec)
+2 rows in set (0.00 sec)
 
 mysql> DESC department;
 +---------------+----------+------+-----+---------+-------+
@@ -87,19 +124,54 @@ mysql> DESC department_admin;
 | Field         | Type    | Null | Key | Default | Extra |
 +---------------+---------+------+-----+---------+-------+
 | Admin_Id      | char(3) | YES  | MUL | NULL    |       |
-| Department_Id | char(3) | YES  | MUL | NULL    |       |
+| Department_Id | char(5) | YES  | MUL | NULL    |       |
 +---------------+---------+------+-----+---------+-------+
 2 rows in set (0.01 sec)
 
-mysql> DESC exam;
-+---------+-------------+------+-----+---------+-------+
-| Field   | Type        | Null | Key | Default | Extra |
-+---------+-------------+------+-----+---------+-------+
-| Exam_Id | char(3)     | NO   | PRI | NULL    |       |
-| Status  | varchar(10) | YES  |     | NULL    |       |
-| S_Id    | char(3)     | YES  | MUL | NULL    |       |
-+---------+-------------+------+-----+---------+-------+
-3 rows in set (0.01 sec)
+mysql> DESC final_marks_summary;
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| StudentID   | varchar(10)   | YES  |     | NULL    |       |
+| CourseCode  | varchar(10)   | YES  |     | NULL    |       |
+| Final_Marks | decimal(34,6) | YES  |     | NULL    |       |
++-------------+---------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> DESC  individual_ca_summary;
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| StudentID   | varchar(10)   | YES  |     | NULL    |       |
+| CourseCode  | varchar(10)   | YES  |     | NULL    |       |
+| CA_Marks    | decimal(34,6) | YES  |     | NULL    |       |
+| Eligibility | varchar(12)   | NO   |     |         |       |
++-------------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESC individualattendancesummary;
++----------------------+---------------+------+-----+---------+-------+
+| Field                | Type          | Null | Key | Default | Extra |
++----------------------+---------------+------+-----+---------+-------+
+| RegistrationNo       | varchar(10)   | YES  |     | NULL    |       |
+| CourseCode           | varchar(10)   | YES  |     | NULL    |       |
+| AttendancePercentage | decimal(27,4) | YES  |     | NULL    |       |
+| Eligibility          | varchar(12)   | NO   |     |         |       |
++----------------------+---------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> DESC individualcourseattendance;
++----------------+------------------------------------+------+-----+---------+-------+
+| Field          | Type                               | Null | Key | Default | Extra |
++----------------+------------------------------------+------+-----+---------+-------+
+| RegistrationNo | varchar(10)                        | YES  |     | NULL    |       |
+| CourseCode     | varchar(10)                        | YES  |     | NULL    |       |
+| Week           | int                                | YES  |     | NULL    |       |
+| Date           | date                               | YES  |     | NULL    |       |
+| Status         | enum('Present','Absent','Medical') | YES  |     | NULL    |       |
+| TimeAllocation | float                              | YES  |     | NULL    |       |
++----------------+------------------------------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
 
 mysql> DESC lecturer;
 +---------+------------+------+-----+---------+-------+
@@ -117,7 +189,7 @@ mysql> DESC lecturer_contact;
 | LID      | char(3)     | YES  | MUL | NULL    |       |
 | Phone_No | varchar(11) | YES  |     | NULL    |       |
 +----------+-------------+------+-----+---------+-------+
-2 rows in set (0.01 sec)
+2 rows in set (0.00 sec)
 
 mysql> DESC lecturer_course;
 +---------------+-------------+------+-----+---------+-------+
@@ -128,96 +200,8 @@ mysql> DESC lecturer_course;
 | Lec_Hours     | int         | YES  |     | NULL    |       |
 | Lec_In_Charge | varchar(30) | YES  |     | NULL    |       |
 +---------------+-------------+------+-----+---------+-------+
-4 rows in set (0.00 sec)
+4 rows in set (0.01 sec)
 
-mysql> DESC mark;
-+----------+---------+------+-----+---------+-------+
-| Field    | Type    | Null | Key | Default | Extra |
-+----------+---------+------+-----+---------+-------+
-| Mark_Id  | char(3) | NO   | PRI | NULL    |       |
-| Ca_Exam  | int     | YES  |     | NULL    |       |
-| Mid_Exam | int     | YES  |     | NULL    |       |
-| Exam_ID  | char(3) | YES  |     | NULL    |       |
-+----------+---------+------+-----+---------+-------+
-4 rows in set (0.00 sec)
-
-mysql> DESC medical;
-+---------------+---------+------+-----+---------+-------+
-| Field         | Type    | Null | Key | Default | Extra |
-+---------------+---------+------+-----+---------+-------+
-| Medical_Id    | char(3) | NO   | PRI | NULL    |       |
-| Department_Id | char(3) | YES  | MUL | NULL    |       |
-| Reg_No        | char(6) | YES  | MUL | NULL    |       |
-+---------------+---------+------+-----+---------+-------+
-3 rows in set (0.01 sec)
-
-mysql> DESC student;
-+---------+-------------+------+-----+---------+-------+
-| Field   | Type        | Null | Key | Default | Extra |
-+---------+-------------+------+-----+---------+-------+
-| Reg_No  | char(6)     | NO   | PRI | NULL    |       |
-| State   | varchar(20) | YES  |     | NULL    |       |
-| User_ID | varchar(6)  | YES  | MUL | NULL    |       |
-+---------+-------------+------+-----+---------+-------+
-3 rows in set (0.00 sec)
-
-mysql> DESC student_exam;
-+---------+---------+------+-----+---------+-------+
-| Field   | Type    | Null | Key | Default | Extra |
-+---------+---------+------+-----+---------+-------+
-| Exam_ID | char(3) | YES  | MUL | NULL    |       |
-| Reg_No  | char(6) | YES  | MUL | NULL    |       |
-+---------+---------+------+-----+---------+-------+
-2 rows in set (0.00 sec)
-
-mysql> DESC subject;
-+---------+--------------+------+-----+---------+-------+
-| Field   | Type         | Null | Key | Default | Extra |
-+---------+--------------+------+-----+---------+-------+
-| S_Id    | char(3)      | NO   | PRI | NULL    |       |
-| CGPA    | decimal(3,2) | YES  |     | NULL    |       |
-| Credits | int          | YES  |     | NULL    |       |
-+---------+--------------+------+-----+---------+-------+
-3 rows in set (0.01 sec)
-
-mysql> DESC technical_officer;
-+---------+------------+------+-----+---------+-------+
-| Field   | Type       | Null | Key | Default | Extra |
-+---------+------------+------+-----+---------+-------+
-| TID     | char(3)    | NO   | PRI | NULL    |       |
-| User_ID | varchar(6) | YES  | MUL | NULL    |       |
-+---------+------------+------+-----+---------+-------+
-2 rows in set (0.01 sec)
-
-
-
-
-/* Updated Table Structure */
-
-mysql> DESC student;
-+---------+------------+------+-----+---------+-------+
-| Field   | Type       | Null | Key | Default | Extra |
-+---------+------------+------+-----+---------+-------+
-| Reg_No  | char(6)    | NO   | PRI | NULL    |       |
-| User_ID | varchar(6) | YES  | MUL | NULL    |       |
-+---------+------------+------+-----+---------+-------+
-
-
-
-mysql> DESC ATTENDANCE;
-+----------------+------------------------------------+------+-----+---------+----------------+
-| Field          | Type                               | Null | Key | Default | Extra          |
-+----------------+------------------------------------+------+-----+---------+----------------+
-| AttendanceID   | int                                | NO   | PRI | NULL    | auto_increment |
-| StudentID      | varchar(10)                        | YES  |     | NULL    |                |
-| SessionType    | enum('Theory','Practical')         | YES  |     | NULL    |                |
-| Week           | int                                | YES  |     | NULL    |                |
-| Date           | date                               | YES  |     | NULL    |                |
-| Status         | enum('Present','Absent','Medical') | YES  |     | NULL    |                |
-| TimeAllocation | float                              | YES  |     | NULL    |                |
-| Sub_ID         | varchar(10)                        | YES  | MUL | NULL    |                |
-+----------------+------------------------------------+------+-----+---------+----------------+
-8 rows in set (0.00 sec)
 
 mysql> DESC marks;
 +----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
@@ -232,7 +216,36 @@ mysql> DESC marks;
 +----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
 6 rows in set (0.00 sec)
 
-mysql> desc studentstatus;
+mysql> DESC medical;
++---------------+---------+------+-----+---------+-------+
+| Field         | Type    | Null | Key | Default | Extra |
++---------------+---------+------+-----+---------+-------+
+| Medical_Id    | char(3) | NO   | PRI | NULL    |       |
+| Department_Id | char(5) | YES  | MUL | NULL    |       |
+| Reg_No        | char(6) | YES  | MUL | NULL    |       |
++---------------+---------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> DESC practicalattendance;
++-------------------------------+---------------+------+-----+---------+-------+
+| Field                         | Type          | Null | Key | Default | Extra |
++-------------------------------+---------------+------+-----+---------+-------+
+| RegistrationNo                | varchar(10)   | YES  |     | NULL    |       |
+| CourseCode                    | varchar(10)   | YES  |     | NULL    |       |
+| PracticalAttendancePercentage | decimal(27,4) | YES  |     | NULL    |       |
++-------------------------------+---------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> DESC student;
++---------+------------+------+-----+---------+-------+
+| Field   | Type       | Null | Key | Default | Extra |
++---------+------------+------+-----+---------+-------+
+| Reg_No  | char(6)    | NO   | PRI | NULL    |       |
+| User_ID | varchar(6) | YES  | MUL | NULL    |       |
++---------+------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> DESC studentstatus;
 +-----------+-------------------------------------+------+-----+---------+-------+
 | Field     | Type                                | Null | Key | Default | Extra |
 +-----------+-------------------------------------+------+-----+---------+-------+
@@ -241,23 +254,32 @@ mysql> desc studentstatus;
 +-----------+-------------------------------------+------+-----+---------+-------+
 2 rows in set (0.00 sec)
 
-
-mysql> desc course;
-+-------------+-------------+------+-----+---------+-------+
-| Field       | Type        | Null | Key | Default | Extra |
-+-------------+-------------+------+-----+---------+-------+
-| Course_Code | char(3)     | NO   | PRI | NULL    |       |
-| name        | varchar(30) | YES  |     | NULL    |       |
-| type        | varchar(20) | YES  |     | NULL    |       |
-| Reg_No      | char(6)     | YES  | MUL | NULL    |       |
-+-------------+-------------+------+-----+---------+-------+
+mysql> DESC subject;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| S_Id        | varchar(10)  | NO   | PRI | NULL    |       |
+| Credits     | int          | YES  |     | NULL    |       |
+| S_Name      | varchar(100) | YES  |     | NULL    |       |
+| Course_code | char(3)      | YES  | MUL | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
 4 rows in set (0.00 sec)
 
-mysql> DROP TABLE COURSE_SUBJECT;
-Query OK, 0 rows affected (0.05 sec)
+mysql> DESC technical_officer;
++---------+------------+------+-----+---------+-------+
+| Field   | Type       | Null | Key | Default | Extra |
++---------+------------+------+-----+---------+-------+
+| TID     | char(3)    | NO   | PRI | NULL    |       |
+| User_ID | varchar(6) | YES  | MUL | NULL    |       |
++---------+------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
 
-
-mysql> ALTER TABLE marks
-    -> MODIFY COLUMN Sub_ID VARCHAR(10);
-Query OK, 0 rows affected (0.10 sec)
-Records: 0  Duplicates: 0  Warnings: 0
+mysql> DESC theoryattendance;
++----------------------------+---------------+------+-----+---------+-------+
+| Field                      | Type          | Null | Key | Default | Extra |
++----------------------------+---------------+------+-----+---------+-------+
+| RegistrationNo             | varchar(10)   | YES  |     | NULL    |       |
+| CourseCode                 | varchar(10)   | YES  |     | NULL    |       |
+| TheoryAttendancePercentage | decimal(27,4) | YES  |     | NULL    |       |
++----------------------------+---------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
