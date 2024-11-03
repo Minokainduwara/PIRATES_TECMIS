@@ -203,33 +203,34 @@ mysql> DESC student;
 +---------+------------+------+-----+---------+-------+
 
 
-mysql> DESC Attendance;
+
+mysql> DESC ATTENDANCE;
 +----------------+------------------------------------+------+-----+---------+----------------+
 | Field          | Type                               | Null | Key | Default | Extra          |
 +----------------+------------------------------------+------+-----+---------+----------------+
 | AttendanceID   | int                                | NO   | PRI | NULL    | auto_increment |
 | StudentID      | varchar(10)                        | YES  |     | NULL    |                |
-| CourseCode     | varchar(10)                        | YES  |     | NULL    |                |
 | SessionType    | enum('Theory','Practical')         | YES  |     | NULL    |                |
 | Week           | int                                | YES  |     | NULL    |                |
 | Date           | date                               | YES  |     | NULL    |                |
 | Status         | enum('Present','Absent','Medical') | YES  |     | NULL    |                |
 | TimeAllocation | float                              | YES  |     | NULL    |                |
+| Sub_ID         | varchar(10)                        | YES  | MUL | NULL    |                |
 +----------------+------------------------------------+------+-----+---------+----------------+
-8 rows in set (0.01 sec)
+8 rows in set (0.00 sec)
 
 mysql> DESC marks;
 +----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
 | Field          | Type                                                                                            | Null | Key | Default | Extra          |
 +----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
 | MarkID         | int                                                                                             | NO   | PRI | NULL    | auto_increment |
-| StudentID      | varchar(10)                                                                                     | YES  |     | NULL    |                |
-| CourseCode     | varchar(10)                                                                                     | YES  |     | NULL    |                |
+| StudentID      | varchar(10)                                                                                     | YES  | MUL | NULL    |                |
 | AssessmentType | enum('Quiz','Assessment','Midterm_Practical','Midterm_Theory','Final_Practical','Final_Theory') | YES  |     | NULL    |                |
 | MarksObtained  | decimal(5,2)                                                                                    | YES  |     | NULL    |                |
 | MaxMarks       | int                                                                                             | YES  |     | 100     |                |
+| Sub_ID         | varchar(10)                                                                                     | YES  | MUL | NULL    |                |
 +----------------+-------------------------------------------------------------------------------------------------+------+-----+---------+----------------+
-6 rows in set (0.01 sec)
+6 rows in set (0.00 sec)
 
 mysql> desc studentstatus;
 +-----------+-------------------------------------+------+-----+---------+-------+

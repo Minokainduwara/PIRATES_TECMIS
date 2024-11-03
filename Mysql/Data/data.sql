@@ -106,5 +106,26 @@ mysql> SHOW VARIABLES LIKE 'local_infile';
 mysql> SET GLOBAL local_infile = 1;
 Query OK, 0 rows affected (0.00 sec)
 
-
+mysql> INSERT INTO studentstatus (StudentID, Status)
+    -> VALUES
+    -> ('TG1350', 'Proper'),
+    -> ('TG1351', 'Proper'),
+    -> ('TG1352', 'Proper'),
+    -> ('TG1353', 'Proper'),
+    -> ('TG1354', 'Proper'),
+    -> ('TG1355', 'Proper'),
+    -> ('TG1356', 'Proper'),
+    -> ('TG1357', 'Proper'),
+    -> ('TG1358', 'Proper'),
+    -> ('TG1359', 'Proper'),
+    -> ('TG1100', 'Repeat'),
+    -> ('TG1101', 'Repeat'),
+    -> ('TG1102', 'Repeat'),
+    -> ('TG1103', 'Repeat'),
+    -> ('TG1104', 'Repeat'),
+    -> ('TG1105', 'Suspended'),
+    -> ('TG1106', 'Suspended'),
+    -> ('TG1107', 'Suspended');
+Query OK, 18 rows affected (0.02 sec)
+Records: 18  Duplicates: 0  Warnings: 0
 
