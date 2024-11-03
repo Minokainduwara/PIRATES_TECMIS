@@ -89,3 +89,8 @@ GRANT SELECT, INSERT, UPDATE ON faculty_of_technology.ATTENDANCE TO 'TECHNICAL_O
 mysql> GRANT SELECT, INSERT, UPDATE ON faculty_of_technology.ATTENDANCE TO 'TECHNICAL_OFFICER'@'localhost';
 ERROR 1146 (42S02): Table 'faculty_of_technology.ATTENDANCE' doesn't exist
 mysql>
+
+/*-----------------------------------*/
+CREATE USER 'STUDENT'@'localhost' IDENTIFIED BY 'password';
+
+GRANT SELECT ON faculty_of_technology.ATTENDANCE * TO 'STUDENT'@'localhost';
