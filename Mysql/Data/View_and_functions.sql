@@ -485,3 +485,185 @@ mysql> SELECT *
 ///////////////////////////
 Code
 //////////////////////////
+
+
+---------------------
+Theory
+---------------------
+
+CREATE VIEW TheoryAttendance AS
+SELECT 
+    StudentID AS RegistrationNo,
+    Sub_ID AS CourseCode,
+    COUNT(CASE WHEN Status = 'Present' AND SessionType = 'Theory' THEN 1 END) / COUNT(CASE WHEN SessionType = 'Theory' THEN 1 END) * 100 AS TheoryAttendancePercentage
+FROM 
+    ATTENDANCE
+GROUP BY 
+    RegistrationNo, CourseCode;
+
+---------------------------
+Practical
+---------------------------
+
+CREATE VIEW PracticalAttendance AS
+SELECT 
+    StudentID AS RegistrationNo,
+    Sub_ID AS CourseCode,
+    COUNT(CASE WHEN Status = 'Present' AND SessionType = 'Practical' THEN 1 END) / COUNT(CASE WHEN SessionType = 'Practical' THEN 1 END) * 100 AS PracticalAttendancePercentage
+FROM 
+    ATTENDANCE
+GROUP BY 
+    RegistrationNo, CourseCode;
+
+
+
+--------------------------------
+Combined Theory and Practical
+-----------------------------
+
+CREATE VIEW CombinedAttendance AS
+SELECT 
+    StudentID AS RegistrationNo,
+    Sub_ID AS CourseCode,
+    COUNT(CASE WHEN Status = 'Present' THEN 1 END) / COUNT(*) * 100 AS CombinedAttendancePercentage
+FROM 
+    ATTENDANCE
+GROUP BY 
+    RegistrationNo, CourseCode;
+
+
+--------------------------------------------------------
+SELECT * 
+FROM TheoryAttendance
+WHERE CourseCode = 'ICT1112';
+
+
+
+
+SELECT * 
+FROM PracticalAttendance
+WHERE RegistrationNo = 'TG1350';
+
+
+
+SELECT * 
+FROM CombinedAttendance
+WHERE RegistrationNo = 'TG1350';
+
+--------------------------------------------------------
+
+
+/////////////////////////////
+Output
+/////////////////////////////
+
+
+mysql> CREATE VIEW TheoryAttendance AS
+    -> SELECT
+    ->     StudentID AS RegistrationNo,
+    ->     Sub_ID AS CourseCode,
+    ->     COUNT(CASE WHEN Status = 'Present' AND SessionType = 'Theory' THEN 1 END) / COUNT(CASE WHEN SessionType = 'Theory' THEN 1 END) * 100 AS TheoryAttendancePercentage
+    -> FROM
+    ->     ATTENDANCE
+    -> GROUP BY
+    ->     RegistrationNo, CourseCode;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+mysql> 
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> CREATE VIEW PracticalAttendance AS
+    -> SELECT
+    ->     StudentID AS RegistrationNo,
+    ->     Sub_ID AS CourseCode,
+    ->     COUNT(CASE WHEN Status = 'Present' AND SessionType = 'Practical' THEN 1 END) / COUNT(CASE WHEN SessionType = 'Practical' THEN 1 END) * 100 AS PracticalAttendancePercentage
+    -> FROM
+    ->     ATTENDANCE
+    -> GROUP BY
+    ->     RegistrationNo, CourseCode;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> 
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> CREATE VIEW CombinedAttendance AS
+    -> SELECT
+    ->     StudentID AS RegistrationNo,
+    ->     Sub_ID AS CourseCode,
+    ->     COUNT(CASE WHEN Status = 'Present' THEN 1 END) / COUNT(*) * 100 AS CombinedAttendancePercentage
+    -> FROM
+    ->     ATTENDANCE
+    -> GROUP BY
+    ->     RegistrationNo, CourseCode;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql>
+
+
+mysql> SELECT *
+    -> FROM TheoryAttendance
+    -> WHERE CourseCode = 'ICT1112';
++----------------+------------+----------------------------+
+| RegistrationNo | CourseCode | TheoryAttendancePercentage |
++----------------+------------+----------------------------+
+| TG1350         | ICT1112    |                    85.7143 |
+| TG1351         | ICT1112    |                   100.0000 |
+| TG1352         | ICT1112    |                    85.7143 |
+| TG1353         | ICT1112    |                   100.0000 |
+| TG1354         | ICT1112    |                   100.0000 |
+| TG1355         | ICT1112    |                   100.0000 |
+| TG1356         | ICT1112    |                   100.0000 |
+| TG1357         | ICT1112    |                    85.7143 |
+| TG1358         | ICT1112    |                    57.1429 |
+| TG1359         | ICT1112    |                   100.0000 |
+| TG1100         | ICT1112    |                    85.7143 |
+| TG1101         | ICT1112    |                   100.0000 |
+| TG1102         | ICT1112    |                     0.0000 |
+| TG1103         | ICT1112    |                    71.4286 |
+| TG1104         | ICT1112    |                    71.4286 |
+| TG1105         | ICT1112    |                    71.4286 |
+| TG1106         | ICT1112    |                    71.4286 |
+| TG1107         | ICT1112    |                   100.0000 |
++----------------+------------+----------------------------+
+18 rows in set (0.01 sec)
+
+mysql> SELECT *
+    -> FROM PracticalAttendance
+    -> WHERE RegistrationNo = 'TG1350';
++----------------+------------+-------------------------------+
+| RegistrationNo | CourseCode | PracticalAttendancePercentage |
++----------------+------------+-------------------------------+
+| TG1350         | ENG1114    |                          NULL |
+| TG1350         | ICT1112    |                       60.0000 |
+| TG1350         | ICT1122    |                       60.0000 |
+| TG1350         | ICT1132    |                       60.0000 |
+| TG1350         | ICT1142    |                       75.0000 |
+| TG1350         | ICT1153    |                       75.0000 |
+| TG1350         | ICT1161    |                       80.0000 |
+| TG1350         | TMS1113    |                       50.0000 |
++----------------+------------+-------------------------------+
+8 rows in set, 1 warning (0.01 sec)
+
+mysql> SELECT *
+    -> FROM CombinedAttendance
+    -> WHERE RegistrationNo = 'TG1350';
++----------------+------------+------------------------------+
+| RegistrationNo | CourseCode | CombinedAttendancePercentage |
++----------------+------------+------------------------------+
+| TG1350         | ENG1114    |                     100.0000 |
+| TG1350         | ICT1112    |                      75.0000 |
+| TG1350         | ICT1122    |                      83.3333 |
+| TG1350         | ICT1132    |                      75.0000 |
+| TG1350         | ICT1142    |                      63.6364 |
+| TG1350         | ICT1153    |                      70.0000 |
+| TG1350         | ICT1161    |                      83.3333 |
+| TG1350         | TMS1113    |                      75.0000 |
++----------------+------------+------------------------------+
+8 rows in set (0.01 sec)
+
+mysql>
+
+
+
+
