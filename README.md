@@ -40,7 +40,7 @@ This mini practicum demonstrates database management concepts, enabling efficien
 
 ---
 
-> ![Relational-Mapping Diagram](https://github.com/Minokainduwara/Project_Sql_TECMIS/blob/main/ER%20Diagram.jpg)
+> ![Relational-Mapping Diagram](https://github.com/Minokainduwara/Project_Sql_TECMIS/blob/main/Relational_mapping.jpg)
 
 ## 🚀 Getting Started
 
