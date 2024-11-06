@@ -40,6 +40,8 @@ This mini practicum demonstrates database management concepts, enabling efficien
 
 ---
 
+> ![Entity-Relationship Diagram](https://github.com/Minokainduwara/Project_Sql_TECMIS/blob/main/ER%20Diagram.jpg)
+
 ## 🚀 Getting Started
 
 ### Prerequisites
