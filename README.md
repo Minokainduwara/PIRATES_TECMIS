@@ -35,12 +35,12 @@ This mini practicum demonstrates database management concepts, enabling efficien
 - **Marks**: Records assessments.
 - **Attendance**: Tracks weekly attendance by course.
 
-### Entity-Relationship Diagram
-* The database structure is designed around a detailed ERD, mapping relationships between students, courses, attendance, and marks.
+### Relational Mapping Diagram
+* The database structure is designed around a detailed RM, mapping relationships between students, courses, attendance, and marks.
 
 ---
 
-> ![Entity-Relationship Diagram](https://github.com/Minokainduwara/Project_Sql_TECMIS/blob/main/ER%20Diagram.jpg)
+> ![Relational-Mapping Diagram](https://github.com/Minokainduwara/Project_Sql_TECMIS/blob/main/ER%20Diagram.jpg)
 
 ## 🚀 Getting Started
 
