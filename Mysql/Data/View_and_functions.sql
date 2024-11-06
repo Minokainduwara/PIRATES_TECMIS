@@ -68,8 +68,8 @@ Code
 
 CREATE VIEW BatchAttendanceSummary AS
 SELECT 
-    Sub_ID AS CourseCode,
-    StudentID AS RegistrationNo,
+    CourseCode,
+    StudentID,
     COUNT(CASE WHEN Status = 'Present' THEN 1 END) / COUNT(*) * 100 AS AttendancePercentage,
     CASE 
         WHEN COUNT(CASE WHEN Status = 'Present' THEN 1 END) / COUNT(*) * 100 >= 80 THEN 'Eligible'
@@ -78,13 +78,14 @@ SELECT
 FROM 
     ATTENDANCE
 GROUP BY 
-    CourseCode, RegistrationNo;
+    CourseCode, StudentID;
 
 
 ---------------------------------------------
 SELECT * 
 FROM BatchAttendanceSummary
 WHERE CourseCode = 'ICT1112';
+
 ---------------------------------------------
 
 
@@ -148,8 +149,8 @@ Code
 
 CREATE VIEW AllSubjectsAttendanceSummary AS
 SELECT 
-    StudentID AS RegistrationNo,
-    Sub_ID AS CourseCode,
+    StudentID,
+    CourseCode,
     COUNT(CASE WHEN Status = 'Present' THEN 1 END) / COUNT(*) * 100 AS AttendancePercentage,
     CASE 
         WHEN COUNT(CASE WHEN Status = 'Present' THEN 1 END) / COUNT(*) * 100 >= 80 THEN 'Eligible'
@@ -158,7 +159,8 @@ SELECT
 FROM 
     ATTENDANCE
 GROUP BY 
-    RegistrationNo, CourseCode;
+    StudentID, CourseCode;
+
 
 
 
@@ -351,8 +353,8 @@ CODE
 
 CREATE VIEW IndividualAttendanceSummary AS
 SELECT 
-    StudentID AS RegistrationNo,
-    Sub_ID AS CourseCode,
+    StudentID,
+    CourseCode,
     COUNT(CASE WHEN Status = 'Present' THEN 1 END) / COUNT(*) * 100 AS AttendancePercentage,
     CASE 
         WHEN COUNT(CASE WHEN Status = 'Present' THEN 1 END) / COUNT(*) * 100 >= 80 THEN 'Eligible'
@@ -361,7 +363,7 @@ SELECT
 FROM 
     ATTENDANCE
 GROUP BY 
-    RegistrationNo, CourseCode;
+    StudentID, CourseCode;
 
 
 ------------------------------------------------------------------
@@ -421,14 +423,15 @@ Code
 
 CREATE VIEW IndividualCourseAttendance AS
 SELECT 
-    StudentID AS RegistrationNo,
-    Sub_ID AS CourseCode,
+    StudentID,
+    CourseCode,
     Week,
     Date,
     Status,
     TimeAllocation
 FROM 
     ATTENDANCE;
+
 
 
 --------------------------------------------------------------------------
@@ -493,13 +496,14 @@ Theory
 
 CREATE VIEW TheoryAttendance AS
 SELECT 
-    StudentID AS RegistrationNo,
-    Sub_ID AS CourseCode,
+    StudentID,
+    CourseCode,
     COUNT(CASE WHEN Status = 'Present' AND SessionType = 'Theory' THEN 1 END) / COUNT(CASE WHEN SessionType = 'Theory' THEN 1 END) * 100 AS TheoryAttendancePercentage
 FROM 
     ATTENDANCE
 GROUP BY 
-    RegistrationNo, CourseCode;
+    StudentID, CourseCode;
+
 
 ---------------------------
 Practical
@@ -507,13 +511,13 @@ Practical
 
 CREATE VIEW PracticalAttendance AS
 SELECT 
-    StudentID AS RegistrationNo,
-    Sub_ID AS CourseCode,
+    StudentID,
+    CourseCode,
     COUNT(CASE WHEN Status = 'Present' AND SessionType = 'Practical' THEN 1 END) / COUNT(CASE WHEN SessionType = 'Practical' THEN 1 END) * 100 AS PracticalAttendancePercentage
 FROM 
     ATTENDANCE
 GROUP BY 
-    RegistrationNo, CourseCode;
+    StudentID, CourseCode;
 
 
 
@@ -523,13 +527,14 @@ Combined Theory and Practical
 
 CREATE VIEW CombinedAttendance AS
 SELECT 
-    StudentID AS RegistrationNo,
-    Sub_ID AS CourseCode,
+    StudentID,
+    CourseCode,
     COUNT(CASE WHEN Status = 'Present' THEN 1 END) / COUNT(*) * 100 AS CombinedAttendancePercentage
 FROM 
     ATTENDANCE
 GROUP BY 
-    RegistrationNo, CourseCode;
+    StudentID, CourseCode;
+
 
 
 --------------------------------------------------------
