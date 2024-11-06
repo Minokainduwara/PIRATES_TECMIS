@@ -1438,7 +1438,7 @@ FROM
 JOIN 
     subject AS s ON e.Sub_ID = s.S_Id
 WHERE 
-    s.Course_code = 'C01' -- assuming this represents semester 1 subjects
+    s.Course_code = 'C01' 
 GROUP BY 
     e.StudentID;
 
